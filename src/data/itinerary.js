@@ -1,11 +1,11 @@
 /**
  * 行程总览数据
- * 6天田野调研的每日概要
+ * 7天田野调研的每日概要
  */
 export const itinerary = [
   {
     day: 1,
-    date: '2026-XX-XX',
+    date: '2026-09-01',
     title: '抵达与准备',
     location: '大同市',
     summary: '团队抵达大同，整理装备，确认调研路线与分工',
@@ -15,7 +15,7 @@ export const itinerary = [
   },
   {
     day: 2,
-    date: '2026-XX-XX',
+    date: '2026-09-02',
     title: '华严寺 · 善化寺',
     location: '大同古城',
     summary: '调查辽金皇家寺院的空间配置与神像系统，拍摄碑刻题记',
@@ -25,7 +25,7 @@ export const itinerary = [
   },
   {
     day: 3,
-    date: '2026-XX-XX',
+    date: '2026-09-03',
     title: '云冈石窟（全天）',
     location: '大同西郊武周山',
     summary: '系统性考察云冈早中晚三期洞窟，采集碑刻题记，记录游客行为',
@@ -35,7 +35,7 @@ export const itinerary = [
   },
   {
     day: 4,
-    date: '2026-XX-XX',
+    date: '2026-09-04',
     title: '云冈周边口述',
     location: '云冈镇周边村落',
     summary: '访谈云冈周边村民与商贩，采集口述记忆',
@@ -45,7 +45,7 @@ export const itinerary = [
   },
   {
     day: 5,
-    date: '2026-XX-XX',
+    date: '2026-09-05',
     title: '悬空寺',
     location: '浑源县恒山',
     summary: '调查悬空寺空间布局，重点分析三教殿，开展游客与僧侣访谈',
@@ -55,13 +55,23 @@ export const itinerary = [
   },
   {
     day: 6,
-    date: '2026-XX-XX',
-    title: '悬空寺周边口述 · 返程',
+    date: '2026-09-06',
+    title: '悬空寺周边口述 · 资料整理',
     location: '浑源县',
     summary: '访谈当地老人，补充口述材料；整理资料，团队总结',
     sites: ['浑源县'],
     outputs: ['老人访谈', '资料汇总', '初步判断'],
     color: '#ec4899'
+  },
+  {
+    day: 7,
+    date: '2026-09-07',
+    title: '返程',
+    location: '山西省大同市到北京邮电大学',
+    summary: '总结收获，返程回校',
+    sites: [],
+    outputs: [],
+    color: '#3b82f6'
   }
 ]
 
