@@ -1,11 +1,18 @@
 <template>
   <div class="floorplan-viewer">
     <div class="fp-container">
-      <!-- 平面图占位 -->
-      <div class="fp-placeholder">
+      <!-- 平面图 -->
+      <img
+        v-if="planImageUrl"
+        :src="planImageUrl"
+        :alt="site?.name + '平面图'"
+        class="fp-image"
+      />
+      <!-- 无图时的占位 -->
+      <div v-else class="fp-placeholder">
         <span>📐</span>
         <p>{{ site?.name || '选择寺院' }} 平面图</p>
-        <p class="fp-hint">请将实际平面图放入此区域，热区标注将覆盖在上方</p>
+        <p class="fp-hint">暂无平面图</p>
       </div>
 
       <!-- 热区标注（浮在平面图上） -->
@@ -45,6 +52,10 @@ const selectedHotspot = ref(null)
 
 const site = computed(() => getSiteById(props.activeSite))
 const hotspots = computed(() => getHotspotsBySiteId(props.activeSite))
+const planImageUrl = computed(() => {
+  const img = site.value?.planImage
+  return img ? `/temple-culture-evolution/images/${img}` : null
+})
 </script>
 
 <style scoped>
@@ -70,6 +81,13 @@ const hotspots = computed(() => getHotspotsBySiteId(props.activeSite))
 .fp-placeholder span { font-size: 40px; }
 .fp-placeholder p { margin: 0; color: var(--text-hint); font-size: 15px; }
 .fp-hint { font-size: 12px !important; color: var(--text-placeholder) !important; }
+.fp-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--bg-surface);
+}
 .hotspot-dot {
   position: absolute;
   transform: translate(-50%, -50%);
@@ -99,9 +117,10 @@ const hotspots = computed(() => getHotspotsBySiteId(props.activeSite))
   font-size: 12px;
   font-weight: 600;
   color: var(--text-heading);
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--bg-card);
   padding: 2px 8px;
   border-radius: 4px;
+  box-shadow: 0 1px 3px var(--shadow-md);
 }
 @keyframes pulse {
   0%, 100% { box-shadow: 0 0 0 2px var(--accent-red); }
