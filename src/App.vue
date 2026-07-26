@@ -156,33 +156,34 @@ const activeSpaceSite = ref('huayan')
 <style>
 /* ===== 主题 CSS 变量 ===== */
 :root {
+  /* 浅色主题默认值 */
   --accent-rgb: 99, 102, 241;
-
-  --bg-page: var(--bg-page);
-  --bg-card: var(--bg-card);
-  --bg-surface: var(--bg-surface);
-  --bg-hover: var(--bg-hover);
-  --bg-elevated: var(--bg-elevated);
-
-  --text-heading: var(--text-heading);
-  --text-body: var(--text-body);
-  --text-secondary: var(--text-secondary);
-  --text-muted: var(--text-muted);
-  --text-hint: var(--text-hint);
-  --text-placeholder: var(--text-placeholder);
-
-  --border-default: var(--border-default);
-
-  --accent: var(--accent);
-  --accent-violet: var(--accent-violet);
-  --accent-green: var(--accent-green);
-  --accent-red: var(--accent-red);
-  --accent-amber: var(--accent-amber);
-
-  --shadow-sm: var(--shadow-sm);
-  --shadow-md: var(--shadow-md);
-  --shadow-hover: var(--shadow-hover);
-  --shadow-lg: var(--shadow-lg);
+  
+  --bg-page: #f5f5f7;
+  --bg-card: #ffffff;
+  --bg-surface: #f0f0f2;
+  --bg-hover: #e8e8ec;
+  --bg-elevated: #ffffff;
+  
+  --text-heading: #1a1a1e;
+  --text-body: #3a3a44;
+  --text-secondary: #6a6a78;
+  --text-muted: #8a8a98;
+  --text-hint: #aaaab8;
+  --text-placeholder: #cacad8;
+  
+  --border-default: #d0d0dc;
+  
+  --accent: #6366f1;
+  --accent-violet: #8b5cf6;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+  --accent-amber: #f59e0b;
+  
+  --shadow-sm: rgba(0, 0, 0, 0.05);
+  --shadow-md: rgba(0, 0, 0, 0.08);
+  --shadow-hover: rgba(0, 0, 0, 0.12);
+  --shadow-lg: rgba(0, 0, 0, 0.15);
 }
 
 [data-theme="dark"] {
@@ -289,5 +290,67 @@ code {
 /* 非 hero 区块也设白色背景 */
 #home {
   background: transparent;
+}
+
+/* ===== 打印样式 ===== */
+@media print {
+  .site-header,
+  .site-footer,
+  .theme-toggle,
+  .mobile-toggle,
+  #media video,
+  .floor-plan-viewer__canvas,
+  .echarts {
+    display: none !important;
+  }
+
+  html {
+    scroll-padding-top: 0;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  .section-wrapper {
+    page-break-inside: avoid;
+    padding: 16pt 0;
+  }
+
+  #home, #timeline, #baseline, #space, #findings,
+  #oral, #data, #conclusion, #media, #about {
+    background: #fff !important;
+  }
+
+  .app-root {
+    max-width: 100%;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  h1, h2, h3, h4 {
+    color: #000;
+    page-break-after: avoid;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  table th, table td {
+    border: 0.5pt solid #ccc;
+    padding: 4pt 8pt;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
 }
 </style>

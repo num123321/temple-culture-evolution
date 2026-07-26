@@ -1,7 +1,8 @@
 <template>
   <div class="team-member">
     <div class="tm-avatar">
-      <span>{{ member.avatar ? '📷' : '👤' }}</span>
+      <img v-if="member.avatar" :src="member.avatar" :alt="member.name" />
+      <span v-else>👤</span>
     </div>
     <h4 class="tm-name">{{ member.name }}</h4>
     <span class="tm-role">{{ member.role }}</span>
@@ -37,6 +38,12 @@ defineProps({
   margin: 0 auto 16px;
 }
 .tm-avatar span { font-size: 32px; }
+.tm-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
 .tm-name { font-size: 17px; font-weight: 700; color: var(--text-heading); margin: 0 0 4px; }
 .tm-role {
   display: inline-block;
