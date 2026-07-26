@@ -29,20 +29,20 @@ const questions = getAllQuestions()
 <style scoped>
 .research-questions {
   padding: 80px 24px;
-  background: #f8f9fc;
+  background: var(--bg-surface);
 }
 .rq-inner { max-width: 1200px; margin: 0 auto; }
 .rq-title {
   text-align: center;
   font-size: 32px;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--text-heading);
   margin: 0 0 16px;
 }
 .rq-intro {
   text-align: center;
   font-size: 16px;
-  color: #888;
+  color: var(--text-muted);
   margin: 0 0 48px;
 }
 .rq-grid {
@@ -51,34 +51,34 @@ const questions = getAllQuestions()
   gap: 24px;
 }
 .rq-card {
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 16px;
   padding: 32px 24px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 12px var(--shadow-sm);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .rq-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px var(--shadow-md);
 }
 .rq-icon { font-size: 36px; display: block; margin-bottom: 16px; }
 .rq-subtitle {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: #6366f1;
+  color: var(--accent);
   margin: 0 0 8px;
 }
 .rq-question {
   font-size: 18px;
   font-weight: 600;
-  color: #1a1a2e;
+  color: var(--text-heading);
   margin: 0 0 12px;
   line-height: 1.5;
 }
 .rq-elaboration {
   font-size: 14px;
-  color: #777;
+  color: var(--text-muted);
   line-height: 1.7;
   margin: 0;
 }

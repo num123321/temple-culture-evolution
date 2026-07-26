@@ -54,7 +54,7 @@ const hotspots = computed(() => getHotspotsBySiteId(props.activeSite))
   aspect-ratio: 4 / 3;
   border-radius: 14px;
   overflow: hidden;
-  background: #f8f9fc;
+  background: var(--bg-surface);
 }
 .fp-placeholder {
   position: absolute;
@@ -63,13 +63,13 @@ const hotspots = computed(() => getHotspotsBySiteId(props.activeSite))
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px dashed #ddd;
+  border: 2px dashed var(--border-default);
   border-radius: 10px;
   gap: 8px;
 }
 .fp-placeholder span { font-size: 40px; }
-.fp-placeholder p { margin: 0; color: #999; font-size: 15px; }
-.fp-hint { font-size: 12px !important; color: #bbb !important; }
+.fp-placeholder p { margin: 0; color: var(--text-hint); font-size: 15px; }
+.fp-hint { font-size: 12px !important; color: var(--text-placeholder) !important; }
 .hotspot-dot {
   position: absolute;
   transform: translate(-50%, -50%);
@@ -80,15 +80,15 @@ const hotspots = computed(() => getHotspotsBySiteId(props.activeSite))
   display: block;
   width: 16px;
   height: 16px;
-  background: #ef4444;
+  background: var(--accent-red);
   border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 2px #ef4444;
+  border: 3px solid var(--bg-card);
+  box-shadow: 0 0 0 2px var(--accent-red);
   animation: pulse 2s infinite;
 }
 .hotspot-dot.active .dot-inner {
-  background: #6366f1;
-  box-shadow: 0 0 0 2px #6366f1;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent);
 }
 .dot-label {
   position: absolute;
@@ -98,13 +98,13 @@ const hotspots = computed(() => getHotspotsBySiteId(props.activeSite))
   white-space: nowrap;
   font-size: 12px;
   font-weight: 600;
-  color: #1a1a2e;
+  color: var(--text-heading);
   background: rgba(255, 255, 255, 0.9);
   padding: 2px 8px;
   border-radius: 4px;
 }
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 2px #ef4444; }
+  0%, 100% { box-shadow: 0 0 0 2px var(--accent-red); }
   50% { box-shadow: 0 0 0 6px rgba(239, 68, 68, 0.3); }
 }
 </style>

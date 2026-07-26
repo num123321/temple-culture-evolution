@@ -32,7 +32,7 @@ const sites = getAllSites()
 .ss-tabs {
   display: inline-flex;
   gap: 8px;
-  background: #f0f0f5;
+  background: var(--bg-hover);
   padding: 6px;
   border-radius: 10px;
 }
@@ -42,16 +42,16 @@ const sites = getAllSites()
   background: transparent;
   border-radius: 8px;
   font-size: 15px;
-  color: #666;
+  color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s;
 }
-.ss-tab:hover { color: #1a1a2e; }
+.ss-tab:hover { color: var(--text-heading); }
 .ss-tab.active {
-  background: #fff;
-  color: #6366f1;
+  background: var(--bg-card);
+  color: var(--accent);
   font-weight: 600;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 4px var(--shadow-md);
 }
-.ss-hint { font-size: 13px; color: #aaa; margin: 16px 0 0; }
+.ss-hint { font-size: 13px; color: var(--text-hint); margin: 16px 0 0; }
 </style>

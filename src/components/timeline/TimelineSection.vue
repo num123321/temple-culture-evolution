@@ -31,7 +31,7 @@ const days = getAllDays()
   bottom: 0;
   width: 2px;
   background: linear-gradient(180deg,
-    #6366f1, #f59e0b, #ef4444, #10b981, #8b5cf6, #ec4899
+    var(--accent), var(--accent-amber), var(--accent-red), var(--accent-green), var(--accent-violet), #ec4899
   );
   transform: translateX(-50%);
 }

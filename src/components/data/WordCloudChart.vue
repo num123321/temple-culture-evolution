@@ -22,5 +22,5 @@ defineProps({
 <style scoped>
 .wordcloud-chart { max-width: 700px; margin: 0 auto; }
 .chart-container { width: 100%; height: 400px; }
-.chart-empty { text-align: center; color: #bbb; font-size: 15px; padding: 80px 0; }
+.chart-empty { text-align: center; color: var(--text-placeholder); font-size: 15px; padding: 80px 0; }
 </style>

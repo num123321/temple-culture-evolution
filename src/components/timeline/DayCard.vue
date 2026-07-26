@@ -33,7 +33,7 @@ defineProps({
   position: relative;
   width: 44%;
   padding: 24px;
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
   margin-left: auto;
@@ -48,7 +48,7 @@ defineProps({
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  border: 3px solid #fff;
+  border: 3px solid var(--bg-card);
   box-shadow: 0 0 0 2px currentColor;
 }
 .day-card:not(.left) .day-dot { left: -33px; }
@@ -60,24 +60,24 @@ defineProps({
   margin-bottom: 8px;
 }
 .day-number { font-size: 14px; font-weight: 700; }
-.day-date { font-size: 13px; color: #aaa; }
+.day-date { font-size: 13px; color: var(--text-hint); }
 .day-title {
   font-size: 20px;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--text-heading);
   margin: 0 0 8px;
 }
-.day-location { font-size: 14px; color: #888; margin: 0 0 8px; }
-.day-summary { font-size: 14px; color: #666; line-height: 1.7; margin: 0 0 12px; }
+.day-location { font-size: 14px; color: var(--text-muted); margin: 0 0 8px; }
+.day-summary { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px; }
 .day-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
 .tag {
   padding: 3px 12px;
-  background: #f0f0f5;
+  background: var(--bg-hover);
   border-radius: 12px;
   font-size: 12px;
-  color: #6366f1;
+  color: var(--accent);
 }
-.day-outputs { font-size: 13px; color: #777; }
+.day-outputs { font-size: 13px; color: var(--text-muted); }
 .outputs-label { font-weight: 600; margin: 0 0 4px; }
 .day-outputs ul {
   margin: 0;

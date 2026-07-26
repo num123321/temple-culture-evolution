@@ -54,24 +54,24 @@ const questionnaire = getQuestionnaireData()
 .df-title {
   font-size: 20px;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--text-heading);
   margin: 0 0 4px;
   text-align: center;
 }
 .df-subtitle {
   text-align: center;
   font-size: 13px;
-  color: #aaa;
+  color: var(--text-hint);
   margin: 0 0 24px;
 }
 .df-survey-placeholder {
-  background: #f8f9fc;
+  background: var(--bg-surface);
   border-radius: 12px;
   padding: 48px;
   text-align: center;
-  border: 2px dashed #e0e0ea;
+  border: 2px dashed var(--bg-elevated);
 }
 .df-survey-placeholder span { font-size: 40px; }
-.df-survey-placeholder p { font-size: 15px; color: #999; margin: 12px 0 0; }
-.hint { font-size: 12px !important; color: #bbb !important; }
+.df-survey-placeholder p { font-size: 15px; color: var(--text-hint); margin: 12px 0 0; }
+.hint { font-size: 12px !important; color: var(--text-placeholder) !important; }
 </style>

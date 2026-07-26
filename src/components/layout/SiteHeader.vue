@@ -20,12 +20,19 @@
       <button class="mobile-toggle" @click="mobileOpen = !mobileOpen">
         <span></span><span></span><span></span>
       </button>
+      <button class="theme-toggle" @click="toggleTheme" :title="isDark ? '切换亮色模式' : '切换深色模式'">
+        <span v-if="isDark">☀️</span>
+        <span v-else>🌙</span>
+      </button>
     </div>
   </header>
 </template>
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useTheme } from '../../composables/useTheme.js'
+
+const { isDark, toggle: toggleTheme } = useTheme()
 
 const navItems = [
   { id: 'home', label: '首页' },
@@ -80,9 +87,9 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   background: transparent;
 }
 .site-header.scrolled {
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--bg-card);
   backdrop-filter: blur(12px);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px var(--shadow-md);
 }
 .header-inner {
   max-width: 1280px;
@@ -103,7 +110,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 .logo-text {
   font-size: 16px;
   font-weight: 600;
-  color: #1a1a2e;
+  color: var(--text-heading);
 }
 .nav {
   display: flex;
@@ -112,15 +119,15 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 .nav-link {
   padding: 6px 14px;
   font-size: 14px;
-  color: #555;
+  color: var(--text-secondary);
   text-decoration: none;
   border-radius: 6px;
   transition: all 0.2s;
 }
 .nav-link:hover,
 .nav-link.active {
-  color: #1a1a2e;
-  background: rgba(0, 0, 0, 0.06);
+  color: var(--text-heading);
+  background: var(--shadow-hover);
 }
 .mobile-toggle {
   display: none;
@@ -135,9 +142,22 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   display: block;
   width: 24px;
   height: 2px;
-  background: #1a1a2e;
+  background: var(--text-heading);
   border-radius: 2px;
   transition: all 0.3s;
+}
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 6px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  line-height: 1;
+}
+.theme-toggle:hover {
+  background: var(--bg-hover);
 }
 @media (max-width: 960px) {
   .nav {
@@ -147,7 +167,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
     right: 0;
     bottom: 0;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.98);
+    background: var(--bg-card);
     backdrop-filter: blur(16px);
     padding: 24px;
     gap: 8px;

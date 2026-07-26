@@ -24,20 +24,20 @@ const nextSteps = getNextSteps()
 <style scoped>
 .research-conclusion { max-width: 900px; margin: 0 auto; }
 .rc-next-steps {
-  background: #f8f9fc;
+  background: var(--bg-surface);
   border-radius: 14px;
   padding: 28px;
 }
 .rc-next-steps h3 {
   font-size: 18px;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--text-heading);
   margin: 0 0 16px;
 }
 .rc-next-steps ul { margin: 0; padding-left: 18px; }
 .rc-next-steps li {
   font-size: 14px;
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.8;
 }
 </style>

@@ -42,7 +42,7 @@ const renderChart = () => {
     yAxis: {
       type: 'value',
       axisLabel: { color: '#888' },
-      splitLine: { lineStyle: { color: '#f0f0f5' } }
+      splitLine: { lineStyle: { color: 'var(--bg-hover)' } }
     },
     series: (props.data.series || []).map(s => ({
       name: s.name,
@@ -64,5 +64,5 @@ watch(() => props.data, () => renderChart(), { deep: true })
 <style scoped>
 .trendline-chart { max-width: 800px; margin: 0 auto; }
 .chart-container { width: 100%; height: 350px; }
-.chart-empty { text-align: center; color: #bbb; font-size: 15px; padding: 100px 0; }
+.chart-empty { text-align: center; color: var(--text-placeholder); font-size: 15px; padding: 100px 0; }
 </style>

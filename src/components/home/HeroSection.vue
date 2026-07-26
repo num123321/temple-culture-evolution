@@ -44,7 +44,7 @@ const scrollTo = (id) => {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.15), transparent 70%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(var(--accent-rgb), 0.15), transparent 70%);
 }
 .hero-content {
   position: relative;
@@ -54,7 +54,7 @@ const scrollTo = (id) => {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 6px;
-  color: #8b5cf6;
+  color: var(--accent-violet);
   margin: 0 0 20px;
 }
 .hero-title {
@@ -65,11 +65,11 @@ const scrollTo = (id) => {
   line-height: 1.2;
 }
 .hero-title .highlight {
-  color: #f59e0b;
+  color: var(--accent-amber);
 }
 .hero-desc {
   font-size: 18px;
-  color: #aaa;
+  color: var(--text-hint);
   line-height: 1.8;
   margin: 0 0 32px;
 }
@@ -84,7 +84,7 @@ const scrollTo = (id) => {
   padding: 6px 18px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
-  color: #ccc;
+  color: var(--text-placeholder);
   font-size: 14px;
 }
 .hero-scroll {
@@ -92,7 +92,7 @@ const scrollTo = (id) => {
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  color: #888;
+  color: var(--text-muted);
   text-decoration: none;
   font-size: 14px;
   transition: color 0.3s;

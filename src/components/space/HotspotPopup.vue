@@ -33,13 +33,13 @@ defineEmits(['close'])
   padding: 24px;
 }
 .hotspot-popup {
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 16px;
   padding: 32px;
   max-width: 480px;
   width: 100%;
   position: relative;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 60px var(--shadow-lg);
 }
 .popup-close {
   position: absolute;
@@ -48,45 +48,45 @@ defineEmits(['close'])
   width: 32px;
   height: 32px;
   border: none;
-  background: #f0f0f5;
+  background: var(--bg-hover);
   border-radius: 50%;
   font-size: 14px;
   cursor: pointer;
-  color: #666;
+  color: var(--text-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
 }
-.popup-close:hover { background: #e0e0ea; }
+.popup-close:hover { background: var(--bg-elevated); }
 .popup-title {
   font-size: 22px;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--text-heading);
   margin: 0 0 8px;
 }
 .popup-category {
   display: inline-block;
   padding: 3px 12px;
-  background: #f0f0f5;
+  background: var(--bg-hover);
   border-radius: 10px;
   font-size: 12px;
-  color: #6366f1;
+  color: var(--accent);
   margin-bottom: 16px;
 }
 .popup-desc {
   font-size: 15px;
-  color: #555;
+  color: var(--text-secondary);
   line-height: 1.8;
   margin: 0 0 20px;
 }
 .popup-photos {
-  background: #f8f9fc;
+  background: var(--bg-surface);
   border-radius: 10px;
   padding: 40px;
   text-align: center;
 }
-.photos-hint { color: #bbb; font-size: 14px; margin: 0; }
+.photos-hint { color: var(--text-placeholder); font-size: 14px; margin: 0; }
 
 .popup-enter-active, .popup-leave-active {
   transition: opacity 0.3s ease;

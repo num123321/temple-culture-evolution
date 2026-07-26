@@ -26,9 +26,9 @@ const teamInfo = getTeamInfo()
 <style scoped>
 .team-grid { max-width: 1000px; margin: 0 auto; }
 .tg-info { text-align: center; margin-bottom: 48px; }
-.tg-info h3 { font-size: 24px; font-weight: 700; color: #1a1a2e; margin: 0 0 8px; }
-.tg-institution { font-size: 15px; color: #888; margin: 0 0 12px; }
-.tg-desc { font-size: 14px; color: #666; line-height: 1.7; max-width: 600px; margin: 0 auto; }
+.tg-info h3 { font-size: 24px; font-weight: 700; color: var(--text-heading); margin: 0 0 8px; }
+.tg-institution { font-size: 15px; color: var(--text-muted); margin: 0 0 12px; }
+.tg-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; max-width: 600px; margin: 0 auto; }
 .tg-members {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

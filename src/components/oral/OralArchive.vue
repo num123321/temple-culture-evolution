@@ -48,19 +48,19 @@ const filteredMemories = computed(() => {
 }
 .oa-filter-btn {
   padding: 8px 24px;
-  border: 1px solid #e0e0ea;
+  border: 1px solid var(--bg-elevated);
   border-radius: 20px;
-  background: #fff;
+  background: var(--bg-card);
   font-size: 14px;
-  color: #666;
+  color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s;
 }
-.oa-filter-btn:hover { border-color: #6366f1; color: #6366f1; }
+.oa-filter-btn:hover { border-color: var(--accent); color: var(--accent); }
 .oa-filter-btn.active {
-  background: #6366f1;
+  background: var(--accent);
   color: #fff;
-  border-color: #6366f1;
+  border-color: var(--accent);
 }
 .oa-grid {
   display: grid;

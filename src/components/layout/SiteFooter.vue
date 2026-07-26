@@ -24,8 +24,8 @@
 
 <style scoped>
 .site-footer {
-  background: #1a1a2e;
-  color: #ccc;
+  background: #0f0c29;
+  color: var(--text-placeholder);
   padding: 48px 24px 32px;
 }
 .footer-inner {
@@ -44,17 +44,17 @@
 }
 .footer-icon { font-size: 28px; }
 .footer-title { font-size: 16px; font-weight: 600; color: #fff; margin: 0; }
-.footer-subtitle { font-size: 13px; color: #999; margin: 4px 0 0; }
+.footer-subtitle { font-size: 13px; color: var(--text-hint); margin: 4px 0 0; }
 .footer-links {
   display: flex;
   gap: 24px;
 }
 .footer-links a {
-  color: #aaa;
+  color: var(--text-hint);
   text-decoration: none;
   font-size: 14px;
   transition: color 0.2s;
 }
 .footer-links a:hover { color: #fff; }
-.footer-copy { font-size: 12px; color: #666; margin: 0; }
+.footer-copy { font-size: 12px; color: var(--text-secondary); margin: 0; }
 </style>

@@ -154,6 +154,67 @@ const activeSpaceSite = ref('huayan')
 </script>
 
 <style>
+/* ===== 主题 CSS 变量 ===== */
+:root {
+  --accent-rgb: 99, 102, 241;
+
+  --bg-page: var(--bg-page);
+  --bg-card: var(--bg-card);
+  --bg-surface: var(--bg-surface);
+  --bg-hover: var(--bg-hover);
+  --bg-elevated: var(--bg-elevated);
+
+  --text-heading: var(--text-heading);
+  --text-body: var(--text-body);
+  --text-secondary: var(--text-secondary);
+  --text-muted: var(--text-muted);
+  --text-hint: var(--text-hint);
+  --text-placeholder: var(--text-placeholder);
+
+  --border-default: var(--border-default);
+
+  --accent: var(--accent);
+  --accent-violet: var(--accent-violet);
+  --accent-green: var(--accent-green);
+  --accent-red: var(--accent-red);
+  --accent-amber: var(--accent-amber);
+
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-hover: var(--shadow-hover);
+  --shadow-lg: var(--shadow-lg);
+}
+
+[data-theme="dark"] {
+  --accent-rgb: 129, 140, 248;
+
+  --bg-page: #0d0d12;
+  --bg-card: #1a1a26;
+  --bg-surface: #16161f;
+  --bg-hover: #22222e;
+  --bg-elevated: #282838;
+
+  --text-heading: #e8e8ec;
+  --text-body: #c8c8d4;
+  --text-secondary: #9898a8;
+  --text-muted: #686878;
+  --text-hint: #585868;
+  --text-placeholder: #484858;
+
+  --border-default: #2a2a3a;
+
+  --accent: #818cf8;
+  --accent-violet: #a78bfa;
+  --accent-green: #34d399;
+  --accent-red: #f87171;
+  --accent-amber: #fbbf24;
+
+  --shadow-sm: rgba(0, 0, 0, 0.3);
+  --shadow-md: rgba(0, 0, 0, 0.4);
+  --shadow-hover: rgba(0, 0, 0, 0.35);
+  --shadow-lg: rgba(0, 0, 0, 0.5);
+}
+
 /* ===== 全局样式 ===== */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -172,9 +233,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #333;
-  background: #fafafa;
+  color: var(--text-body);
+  background: var(--bg-page);
   line-height: 1.6;
+  transition: color 0.3s, background 0.3s;
 }
 
 a {
@@ -200,12 +262,12 @@ code {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ccc;
+  background: var(--text-placeholder);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #aaa;
+  background: var(--text-hint);
 }
 
 /* 区块间隔交替背景色 */
@@ -214,14 +276,14 @@ code {
 #findings,
 #data,
 #media {
-  background: #fff;
+  background: var(--bg-card);
 }
 
 #space,
 #oral,
 #conclusion,
 #about {
-  background: #f8f9fc;
+  background: var(--bg-surface);
 }
 
 /* 非 hero 区块也设白色背景 */

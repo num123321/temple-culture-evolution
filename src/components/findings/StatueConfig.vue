@@ -48,48 +48,48 @@ const data = getStatueComparison()
 
 <style scoped>
 .statue-config { max-width: 1100px; margin: 0 auto 48px; }
-.sc-title { font-size: 22px; font-weight: 700; color: #1a1a2e; margin: 0 0 28px; text-align: center; }
+.sc-title { font-size: 22px; font-weight: 700; color: var(--text-heading); margin: 0 0 28px; text-align: center; }
 .sc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 32px; }
 .sc-site {
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 14px;
   padding: 24px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 12px var(--shadow-sm);
 }
 .sc-site-name {
   font-size: 18px;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--text-heading);
   margin: 0 0 20px;
   padding-bottom: 12px;
-  border-bottom: 2px solid #f0f0f5;
+  border-bottom: 2px solid var(--bg-hover);
 }
 .sc-hall { margin-bottom: 20px; }
-.hall-name { font-size: 15px; font-weight: 600; color: #6366f1; margin: 0 0 10px; }
+.hall-name { font-size: 15px; font-weight: 600; color: var(--accent); margin: 0 0 10px; }
 .hall-table { font-size: 13px; }
 .table-header, .table-row {
   display: grid;
   grid-template-columns: 1.2fr 0.6fr 0.8fr 1.4fr;
   gap: 8px;
   padding: 8px 0;
-  border-bottom: 1px solid #f0f0f5;
+  border-bottom: 1px solid var(--bg-hover);
 }
 .table-header {
   font-weight: 600;
-  color: #888;
+  color: var(--text-muted);
   font-size: 12px;
   text-transform: uppercase;
 }
-.table-row { color: #555; }
-.col-name { font-weight: 600; color: #1a1a2e; }
-.col-count { color: #6366f1; font-weight: 600; }
+.table-row { color: var(--text-secondary); }
+.col-name { font-weight: 600; color: var(--text-heading); }
+.col-count { color: var(--accent); font-weight: 600; }
 .sc-notes {
-  background: #f8f9fc;
+  background: var(--bg-surface);
   border-radius: 12px;
   padding: 24px;
 }
-.sc-notes h4 { margin: 0 0 12px; font-size: 15px; color: #1a1a2e; }
+.sc-notes h4 { margin: 0 0 12px; font-size: 15px; color: var(--text-heading); }
 .sc-notes ul { margin: 0; padding-left: 18px; }
-.sc-notes li { font-size: 14px; color: #666; line-height: 1.8; }
+.sc-notes li { font-size: 14px; color: var(--text-secondary); line-height: 1.8; }
 @media (max-width: 768px) { .sc-grid { grid-template-columns: 1fr; } }
 </style>

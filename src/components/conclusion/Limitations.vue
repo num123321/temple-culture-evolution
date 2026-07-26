@@ -38,14 +38,14 @@ defineProps({
 .lm-title {
   font-size: 22px;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--text-heading);
   margin: 0 0 12px;
   text-align: center;
 }
 .lm-intro {
   text-align: center;
   font-size: 14px;
-  color: #888;
+  color: var(--text-muted);
   margin: 0 0 32px;
 }
 .lm-grid {
@@ -54,22 +54,22 @@ defineProps({
   gap: 16px;
 }
 .lm-card {
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-  border-top: 3px solid #e0e0ea;
+  border-top: 3px solid var(--bg-elevated);
 }
 .lm-card-header { margin-bottom: 10px; }
 .lm-category {
   padding: 2px 12px;
-  background: #f8f9fc;
+  background: var(--bg-surface);
   border-radius: 6px;
   font-size: 12px;
   font-weight: 600;
-  color: #888;
+  color: var(--text-muted);
 }
-.lm-desc { font-size: 13px; color: #666; line-height: 1.7; margin: 0 0 10px; }
-.lm-impact, .lm-mitigation { font-size: 12px; color: #999; line-height: 1.5; margin: 0 0 4px; }
-.impact-label, .mitigation-label { font-weight: 600; color: #888; }
+.lm-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin: 0 0 10px; }
+.lm-impact, .lm-mitigation { font-size: 12px; color: var(--text-hint); line-height: 1.5; margin: 0 0 4px; }
+.impact-label, .mitigation-label { font-weight: 600; color: var(--text-muted); }
 </style>

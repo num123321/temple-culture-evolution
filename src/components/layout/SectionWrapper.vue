@@ -37,19 +37,19 @@ defineProps({
 .section-title {
   font-size: 32px;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--text-heading);
   margin: 0;
   letter-spacing: 2px;
 }
 .section-subtitle {
   font-size: 16px;
-  color: #888;
+  color: var(--text-muted);
   margin: 12px 0 0;
 }
 .section-divider {
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  background: linear-gradient(90deg, var(--accent), var(--accent-violet));
   margin: 20px auto 0;
   border-radius: 2px;
 }

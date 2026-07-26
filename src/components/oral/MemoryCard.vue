@@ -39,10 +39,10 @@ defineProps({
 
 <style scoped>
 .memory-card {
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 14px;
   padding: 24px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 12px var(--shadow-sm);
 }
 .mc-header {
   display: flex;
@@ -52,52 +52,52 @@ defineProps({
 }
 .mc-date-badge {
   padding: 3px 12px;
-  background: #6366f1;
+  background: var(--accent);
   color: #fff;
   border-radius: 10px;
   font-size: 12px;
   font-weight: 600;
 }
-.mc-location { font-size: 13px; color: #888; }
+.mc-location { font-size: 13px; color: var(--text-muted); }
 .mc-interviewee {
   font-size: 18px;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--text-heading);
   margin: 0 0 4px;
 }
-.mc-role { font-size: 13px; color: #888; margin: 0 0 12px; }
-.mc-theme { font-size: 14px; color: #555; margin: 0 0 8px; }
-.theme-label { font-weight: 600; color: #1a1a2e; }
-.mc-summary { font-size: 14px; color: #666; line-height: 1.7; margin: 0 0 12px; }
+.mc-role { font-size: 13px; color: var(--text-muted); margin: 0 0 12px; }
+.mc-theme { font-size: 14px; color: var(--text-secondary); margin: 0 0 8px; }
+.theme-label { font-weight: 600; color: var(--text-heading); }
+.mc-summary { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px; }
 .mc-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
 .mc-tag {
   padding: 2px 10px;
-  background: #f0f0f5;
+  background: var(--bg-hover);
   border-radius: 8px;
   font-size: 11px;
-  color: #888;
+  color: var(--text-muted);
 }
 .mc-audio { margin-bottom: 16px; }
 .audio-placeholder {
-  background: #f8f9fc;
+  background: var(--bg-surface);
   border-radius: 8px;
   padding: 20px;
   text-align: center;
 }
 .audio-placeholder span { font-size: 28px; }
-.audio-placeholder p { font-size: 13px; color: #999; margin: 6px 0 0; }
-.audio-hint { font-size: 11px !important; color: #bbb !important; }
+.audio-placeholder p { font-size: 13px; color: var(--text-hint); margin: 6px 0 0; }
+.audio-hint { font-size: 11px !important; color: var(--text-placeholder) !important; }
 .mc-quotes {
-  border-top: 1px solid #f0f0f5;
+  border-top: 1px solid var(--bg-hover);
   padding-top: 12px;
 }
-.mc-quotes h5 { font-size: 13px; color: #6366f1; margin: 0 0 8px; }
+.mc-quotes h5 { font-size: 13px; color: var(--accent); margin: 0 0 8px; }
 .mc-quotes blockquote {
   margin: 0 0 6px;
   padding: 8px 12px;
-  border-left: 3px solid #ddd;
+  border-left: 3px solid var(--border-default);
   font-size: 13px;
-  color: #777;
+  color: var(--text-muted);
   line-height: 1.6;
   font-style: italic;
 }

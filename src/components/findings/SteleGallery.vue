@@ -35,14 +35,14 @@ const steles = getAllSteles()
 
 <style scoped>
 .stele-gallery { max-width: 1100px; margin: 0 auto 48px; }
-.sg-title { font-size: 22px; font-weight: 700; color: #1a1a2e; margin: 0 0 8px; text-align: center; }
-.sg-intro { text-align: center; font-size: 14px; color: #888; margin: 0 0 32px; }
+.sg-title { font-size: 22px; font-weight: 700; color: var(--text-heading); margin: 0 0 8px; text-align: center; }
+.sg-intro { text-align: center; font-size: 14px; color: var(--text-muted); margin: 0 0 32px; }
 .sg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
 .sg-card {
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 10px var(--shadow-sm);
 }
 .sg-card-header {
   display: flex;
@@ -51,29 +51,29 @@ const steles = getAllSteles()
 }
 .stele-type {
   padding: 2px 10px;
-  background: #f0f0f5;
+  background: var(--bg-hover);
   border-radius: 6px;
   font-size: 11px;
-  color: #6366f1;
+  color: var(--accent);
   font-weight: 600;
 }
-.stele-site { font-size: 13px; color: #888; }
+.stele-site { font-size: 13px; color: var(--text-muted); }
 .stele-title {
   font-size: 16px;
   font-weight: 600;
-  color: #1a1a2e;
+  color: var(--text-heading);
   margin: 0 0 8px;
   line-height: 1.4;
 }
-.stele-meta { font-size: 12px; color: #aaa; margin-bottom: 12px; }
-.stele-summary { font-size: 13px; color: #666; line-height: 1.7; margin: 0 0 16px; }
+.stele-meta { font-size: 12px; color: var(--text-hint); margin-bottom: 12px; }
+.stele-summary { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin: 0 0 16px; }
 .stele-content-placeholder {
-  background: #f8f9fc;
+  background: var(--bg-surface);
   border-radius: 8px;
   padding: 32px;
   text-align: center;
-  border: 2px dashed #eee;
+  border: 2px dashed var(--bg-elevated);
 }
 .stele-content-placeholder span { font-size: 32px; }
-.stele-content-placeholder p { font-size: 13px; color: #bbb; margin: 8px 0 0; }
+.stele-content-placeholder p { font-size: 13px; color: var(--text-placeholder); margin: 8px 0 0; }
 </style>

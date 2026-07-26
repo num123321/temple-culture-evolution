@@ -35,12 +35,12 @@
 }
 .vp-placeholder p {
   font-size: 15px;
-  color: #aaa;
+  color: var(--text-hint);
   margin: 0;
 }
 .vp-file-hint {
   font-size: 12px !important;
-  color: #666 !important;
+  color: var(--text-secondary) !important;
 }
 .vp-file-hint code {
   background: rgba(255,255,255,0.1);

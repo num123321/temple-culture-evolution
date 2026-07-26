@@ -46,14 +46,14 @@ const periods = getCavePeriods()
 
 <style scoped>
 .cave-comparison { max-width: 1100px; margin: 0 auto 48px; }
-.cc-title { font-size: 22px; font-weight: 700; color: #1a1a2e; margin: 0 0 8px; text-align: center; }
-.cc-intro { text-align: center; font-size: 14px; color: #888; margin: 0 0 32px; }
+.cc-title { font-size: 22px; font-weight: 700; color: var(--text-heading); margin: 0 0 8px; text-align: center; }
+.cc-intro { text-align: center; font-size: 14px; color: var(--text-muted); margin: 0 0 32px; }
 .cc-periods { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
 .cc-period {
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 14px;
   padding: 24px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 12px var(--shadow-sm);
 }
 .period-header {
   display: flex;
@@ -61,26 +61,26 @@ const periods = getCavePeriods()
   gap: 12px;
   margin-bottom: 12px;
   padding-bottom: 12px;
-  border-bottom: 2px solid #f0f0f5;
+  border-bottom: 2px solid var(--bg-hover);
 }
-.period-name { font-size: 18px; font-weight: 700; color: #1a1a2e; }
-.period-date { font-size: 13px; color: #888; }
-.period-patron { font-size: 13px; color: #555; margin: 0 0 12px; }
-.period-chars p { font-size: 13px; color: #666; line-height: 1.7; margin: 0 0 4px; }
+.period-name { font-size: 18px; font-weight: 700; color: var(--text-heading); }
+.period-date { font-size: 13px; color: var(--text-muted); }
+.period-patron { font-size: 13px; color: var(--text-secondary); margin: 0 0 12px; }
+.period-chars p { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin: 0 0 4px; }
 .period-caves { margin: 16px 0; }
-.period-caves h4 { font-size: 13px; color: #6366f1; margin: 0 0 8px; }
+.period-caves h4 { font-size: 13px; color: var(--accent); margin: 0 0 8px; }
 .cave-item { display: flex; gap: 10px; margin-bottom: 4px; font-size: 13px; }
-.cave-num { font-weight: 600; color: #1a1a2e; min-width: 32px; }
-.cave-feature { color: #777; }
+.cave-num { font-weight: 600; color: var(--text-heading); min-width: 32px; }
+.cave-feature { color: var(--text-muted); }
 .period-significance {
   margin: 16px 0 0;
   padding: 12px 16px;
-  background: linear-gradient(135deg, #f8f9fc, #f0f0f5);
+  background: linear-gradient(135deg, var(--bg-surface), var(--bg-hover));
   border-radius: 8px;
   font-size: 13px;
-  color: #6366f1;
+  color: var(--accent);
   line-height: 1.7;
-  border-left: 3px solid #6366f1;
+  border-left: 3px solid var(--accent);
   font-style: italic;
 }
 </style>

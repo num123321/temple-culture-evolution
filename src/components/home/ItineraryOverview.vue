@@ -40,41 +40,41 @@
 <style scoped>
 .itinerary-overview {
   padding: 80px 24px;
-  background: #fff;
+  background: var(--bg-card);
 }
 .io-inner { max-width: 1200px; margin: 0 auto; }
 .io-title {
   text-align: center;
   font-size: 32px;
   font-weight: 700;
-  color: #1a1a2e;
+  color: var(--text-heading);
   margin: 0 0 8px;
 }
 .io-subtitle {
   text-align: center;
   font-size: 16px;
-  color: #888;
+  color: var(--text-muted);
   margin: 0 0 48px;
 }
 .io-map-area { margin-bottom: 48px; }
 .io-map-placeholder {
   aspect-ratio: 16 / 7;
-  background: linear-gradient(135deg, #f0f0f5, #e8e8f0);
+  background: linear-gradient(135deg, var(--bg-hover), var(--bg-elevated));
   border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  border: 2px dashed #ddd;
+  border: 2px dashed var(--border-default);
 }
 .io-map-placeholder span { font-size: 48px; }
 .io-map-placeholder p {
   margin: 0;
-  color: #999;
+  color: var(--text-hint);
   font-size: 16px;
 }
-.io-map-hint { font-size: 13px !important; color: #bbb !important; }
+.io-map-hint { font-size: 13px !important; color: var(--text-placeholder) !important; }
 .io-stats {
   display: flex;
   justify-content: center;
@@ -90,10 +90,10 @@
 .stat-num {
   font-size: 36px;
   font-weight: 800;
-  color: #6366f1;
+  color: var(--accent);
 }
 .stat-label {
   font-size: 14px;
-  color: #888;
+  color: var(--text-muted);
 }
 </style>

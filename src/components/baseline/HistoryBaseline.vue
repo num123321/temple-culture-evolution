@@ -27,7 +27,7 @@ const baselines = getAllBaselines()
 .hb-intro {
   text-align: center;
   font-size: 16px;
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.8;
   margin: 0 0 48px;
   max-width: 700px;
