@@ -30,7 +30,7 @@
               :href="`#${child.id}`"
               class="nav-sub-link"
               :class="{ active: activeSection === child.id }"
-              @click.prevent="scrollTo(child.id); hoveredGroup = null"
+              @click.prevent="handleSubClick(child.id)"
             >
               {{ child.label }}
             </a>
@@ -112,6 +112,12 @@ const handleGroupClick = (group) => {
       mobileOpen.value = false
     }
   }
+}
+
+const handleSubClick = (id) => {
+  scrollTo(id)
+  mobileOpen.value = false
+  expandedGroup.value = null
 }
 
 const isGroupActive = (group) => {
@@ -291,6 +297,7 @@ function onResize() {
     left: 0;
     right: 0;
     bottom: 0;
+    height: calc(100vh - 64px);
     flex-direction: column;
     background: var(--bg-card);
     backdrop-filter: blur(16px);
