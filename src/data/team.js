@@ -39,9 +39,9 @@ export const teamMembers = [
 
 export const teamInfo = {
   name: '佛寺文化演变 · 田野调研小组',
-  institution: '北京有点大学 - 电子工程学院',
+  institution: '北京邮电大学 - 电子工程学院',
   year: 2026,
-  description: '一支来自北邮的社会实践小组，试图在六天的时间里，重新审视千年佛寺的空间意义。'
+  description: '一支来自北邮的社会实践小组，试图在七天的时间里，重新审视千年佛寺的空间意义。'
 }
 
 export const getTeamMembers = () => teamMembers

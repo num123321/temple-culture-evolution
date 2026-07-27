@@ -3,7 +3,7 @@
     <div class="header-inner">
       <a href="#home" class="logo" @click.prevent="scrollTo('home')">
         <span class="logo-icon">🏛️</span>
-        <span class="logo-text">佛寺文化演变 · 田野调研</span>
+        <span class="logo-text">佛寺文化演变 · 社会实践项目</span>
       </a>
 
       <nav class="nav" :class="{ open: mobileOpen }">
@@ -57,7 +57,7 @@ const { isDark, toggle: toggleTheme } = useTheme()
 
 const navGroups = [
   { id: 'home', label: '首页', children: [] },
-  { id: 'timeline', label: '调研概览', children: [] },
+  { id: 'timeline', label: '调研历程', children: [] },
   {
     id: 'baseline', label: '空间分析',
     children: [

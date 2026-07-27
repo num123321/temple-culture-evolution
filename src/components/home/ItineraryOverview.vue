@@ -1,7 +1,7 @@
 <template>
   <section class="itinerary-overview">
     <div class="io-inner">
-      <h2 class="io-title">六天行程概览</h2>
+      <h2 class="io-title">七天行程概览</h2>
       <p class="io-subtitle">大同—浑源田野调研路线</p>
 
       <div class="io-map-area">
@@ -14,7 +14,7 @@
 
       <div class="io-stats">
         <div class="stat-item">
-          <span class="stat-num">6</span>
+          <span class="stat-num">7</span>
           <span class="stat-label">调研天数</span>
         </div>
         <div class="stat-item">
