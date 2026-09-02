@@ -4,14 +4,6 @@
       <h2 class="io-title">七天行程概览</h2>
       <p class="io-subtitle">大同—浑源田野调研路线</p>
 
-      <div class="io-map-area">
-        <div class="io-map-placeholder">
-          <span>🗺️</span>
-          <p>行程地图将在此处展示</p>
-          <p class="io-map-hint">（可替换为实际地图组件或静态图）</p>
-        </div>
-      </div>
-
       <div class="io-stats">
         <div class="stat-item">
           <span class="stat-num">7</span>
@@ -56,25 +48,6 @@
   color: var(--text-muted);
   margin: 0 0 48px;
 }
-.io-map-area { margin-bottom: 48px; }
-.io-map-placeholder {
-  aspect-ratio: 16 / 7;
-  background: linear-gradient(135deg, var(--bg-hover), var(--bg-elevated));
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  border: 2px dashed var(--border-default);
-}
-.io-map-placeholder span { font-size: 48px; }
-.io-map-placeholder p {
-  margin: 0;
-  color: var(--text-hint);
-  font-size: 16px;
-}
-.io-map-hint { font-size: 13px !important; color: var(--text-placeholder) !important; }
 .io-stats {
   display: flex;
   justify-content: center;
