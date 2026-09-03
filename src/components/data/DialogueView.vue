@@ -147,11 +147,12 @@ const listenInterview = (slug) => {
 }
 .dv-listen-btn:hover { border-color: var(--accent); background: var(--bg-hover); }
 
-/* 众声之间 */
+/* 众声之间：底色用琥珀 10% 叠加主题表面色，深浅模式均可读 */
 .dv-note {
-  background: linear-gradient(135deg, #fefce8, var(--bg-surface));
-  border-radius: 10px;
-  padding: 16px 18px;
+  background: color-mix(in srgb, var(--accent-amber) 10%, var(--bg-surface));
+  border-left: 3px solid var(--accent-amber);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px;
 }
 .dv-note-label {
   display: block;

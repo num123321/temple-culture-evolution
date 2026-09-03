@@ -41,6 +41,33 @@
           </li>
         </ol>
       </div>
+
+      <!-- 调查结果 -->
+      <div class="df-result">
+        <div class="df-result-head">
+          <h4 class="df-result-title">📊 调查结果</h4>
+          <span v-if="questionnaire.totalResponses" class="df-result-count">有效回收 {{ questionnaire.totalResponses }} 份</span>
+          <span v-else class="df-result-count">回收统计中</span>
+        </div>
+
+        <template v-if="surveyQuestions().length">
+          <div v-for="q in surveyQuestions()" :key="q.id" class="df-result-q">
+            <p class="df-result-qtext">
+              <span class="df-result-qno">{{ q.id.slice(-1) }}</span>{{ q.text }}
+            </p>
+            <div v-for="(val, label) in q.results" :key="label" class="df-result-row">
+              <span class="df-result-label">{{ label }}</span>
+              <span class="df-result-bar">
+                <span class="df-result-fill" :style="{ width: pctOf(q, val) + '%' }"></span>
+              </span>
+              <span class="df-result-val">{{ val }}</span>
+            </div>
+          </div>
+        </template>
+        <p v-else class="df-result-empty">
+          问卷正在回收与统计——回收完成后，各题选择分布将以简洁条形图呈现在此。
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -55,6 +82,16 @@ const wordCloud = getWordCloudData()
 const evoTrend = getEvolutionTrendData()
 const visitorFlow = getVisitorFlowData()
 const questionnaire = getQuestionnaireData()
+
+/* —— 调查结果 —— */
+// 仅返回已有数据结果的题目
+const surveyQuestions = () =>
+  questionnaire.questions.filter((q) => q.results && Object.keys(q.results).length)
+// 该选项在本题的计数占比（用于条形宽度）
+const pctOf = (q, val) => {
+  const total = Object.values(q.results || {}).reduce((a, b) => a + Number(b || 0), 0)
+  return total ? Math.round((Number(val) / total) * 100) : 0
+}
 </script>
 
 <style scoped>
@@ -134,4 +171,79 @@ const questionnaire = getQuestionnaireData()
   padding: 4px 12px;
   border-radius: 14px;
 }
+
+/* ── 调查结果 ── */
+.df-result {
+  margin: 24px auto 0;
+  max-width: 720px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 14px;
+  padding: 22px 26px;
+}
+.df-result-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.df-result-title { margin: 0; font-size: 15px; font-weight: 700; color: var(--text-heading); }
+.df-result-count { font-size: 12px; color: var(--text-hint); }
+.df-result-empty {
+  margin: 0;
+  padding: 26px 18px;
+  text-align: center;
+  color: var(--text-placeholder);
+  font-size: 13px;
+  line-height: 1.8;
+  border: 1px dashed var(--bg-elevated);
+  border-radius: 10px;
+}
+.df-result-q { margin-bottom: 18px; }
+.df-result-q:last-child { margin-bottom: 0; }
+.df-result-qtext {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+.df-result-qno {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.df-result-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.df-result-label { flex: 0 0 88px; font-size: 12px; color: var(--text-muted); text-align: right; }
+.df-result-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--bg-elevated);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.df-result-fill {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-violet));
+  transition: width 0.4s ease;
+}
+.df-result-val { flex: 0 0 30px; font-size: 12px; font-weight: 700; color: var(--text-heading); }
 </style>
