@@ -70,7 +70,8 @@ const navGroups = [
   {
     id: 'oral', label: '口述与数据',
     children: [
-      { id: 'oral', label: '口述记忆' },
+      { id: 'voices', label: '寻常之人 · 千年之寺' },
+      { id: 'interviews', label: '采访实录' },
       { id: 'data', label: '数据发现' }
     ]
   },

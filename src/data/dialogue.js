@@ -1,67 +1,72 @@
 /**
- * 声音与数据的对话映射
- * 对应 DialogueView 组件 — 将口述质性材料与量化数据并置展示
+ * 寻常之人 · 千年之寺（原“声音与数据的对话”）
+ * 对应 DialogueView 组件
  *
- * 每组的「对话问题」为简洁干练的点题提问；
- * 张力命题先行放一句干练判断，口述原文 / 数据发现 / 综合解释仍待实地材料回填。
+ * 说明：本模块没有量化数据，呈现的是香客之外、普通人对佛寺变迁的
+ * 主观看法。每组=一个议题，下列两位（或以上）普通人的原声观点对照；
+ * voices[].quote 为采访字幕真实原话（作口语化清理），slug 对应「采访实录」播放器。
+ * note 为“众声之间”的编者归纳，只作视角梳理，不作量化断言。
  */
 export const dialogues = [
   {
     id: 'd1',
     title: '香火渐冷 · 人潮愈热',
-    question: '香火淡了——是不信，还是不来？',
-    oralExcerpt: {
-      interviewee: '张大爷',
-      quote: '[待填入口述原文]',
-      context: '云冈村村民对云冈石窟的看法'
-    },
-    dataEvidence: {
-      type: 'visitor_survey',
-      description: '旅游目的问卷调查结果',
-      finding: '[待填入数据发现]'
-    },
-    tension: {
-      description: '同一座寺里，"信"在退场，"游"在进场。',
-      resolution: '[待填入综合解释]'
-    }
+    question: '人多了、烧香少了——寺，还是从前那座寺吗？',
+    voices: [
+      {
+        person: '本地大娘',
+        role: '大同本地人',
+        quote: '以前的老百姓来这些古迹，好多都是来烧香的；现在呢，什么样的人都来了。',
+        slug: 'elder'
+      },
+      {
+        person: '外地游客',
+        role: '首次到访大同',
+        quote: '商业化会不会冲淡氛围？我觉得不会——关键是要有特色，别千篇一律。',
+        slug: 'visitor'
+      }
+    ],
+    note: '老人记得香客的虔诚，游客期待景区的特色——同是“寺里走一遭”，两人念的并不是同一件事。'
   },
   {
     id: 'd2',
     title: '村地记忆 · 景区现实',
-    question: '从前是咱村的地，如今成了谁的景？',
-    oralExcerpt: {
-      interviewee: '李阿姨',
-      quote: '[待填入口述原文]',
-      context: '景区商贩对空间历史的理解'
-    },
-    dataEvidence: {
-      type: 'spatial_analysis',
-      description: '平面图功能热区对比（古今）',
-      finding: '[待填入数据发现]'
-    },
-    tension: {
-      description: '空间的"权属"变了，记忆里的"归属"却还留在村里。',
-      resolution: '[待填入综合解释]'
-    }
+    question: '天天相伴的千年古寺，本地人怎么过它？',
+    voices: [
+      {
+        person: '景区店员',
+        role: '古城餐饮从业者',
+        quote: '我们基本上从小就在那地方玩的。以前是去烧香、感受氛围，现在世界各地的游客都来了。',
+        slug: 'shopkeeper'
+      },
+      {
+        person: '环卫大爷',
+        role: '环卫工人',
+        quote: '云冈石窟和华严寺？我工作忙，没去过。',
+        slug: 'cleaner'
+      }
+    ],
+    note: '一个把寺当“生活场”做了半辈子生意，一个天天路过却从不进去——本地人看“身边的历史”，也有亲疏两面。'
   },
   {
     id: 'd3',
     title: '香火记忆 · 消费现场',
-    question: '烧香，如今是心愿，还是消遣？',
-    oralExcerpt: {
-      interviewee: '刘奶奶',
-      quote: '[待填入口述原文]',
-      context: '浑源老人回忆寺庙民俗功能'
-    },
-    dataEvidence: {
-      type: 'field_observation',
-      description: '三教殿参观行为观察记录',
-      finding: '[待填入数据发现]'
-    },
-    tension: {
-      description: '"烧香"从婚丧嫁娶的日常礼俗，退成景区里被观看的符号。',
-      resolution: '[待填入综合解释]'
-    }
+    question: '走进寺门，如今更像许愿，还是像逛逛？',
+    voices: [
+      {
+        person: '本地大娘',
+        role: '大同本地人',
+        quote: '过去和现在的心是一样的，都是求菩萨保佑平安、保佑健康。',
+        slug: 'elder'
+      },
+      {
+        person: '路边小贩',
+        role: '华严寺旁摆摊',
+        quote: '咱们普通老百姓，多转转、多玩玩，慢慢就了解了。',
+        slug: 'vendor'
+      }
+    ],
+    note: '求愿的心没变，走近它的方式却变了——有人把心愿说给菩萨，有人把它看进相册、摆上货摊。'
   }
 ]
 

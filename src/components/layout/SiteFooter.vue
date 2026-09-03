@@ -14,7 +14,7 @@
         <a href="#baseline">历史回望</a>
         <a href="#space">空间故事</a>
         <a href="#findings">专题发现</a>
-        <a href="#oral">口述记忆</a>
+        <a href="#voices">寻常之人 · 千年之寺</a>
         <a href="#data">数据发现</a>
         <a href="#conclusion">研究手记</a>
         <a href="#media">影像记录</a>
@@ -53,7 +53,9 @@
 .footer-subtitle { font-size: 13px; color: var(--text-hint); margin: 4px 0 0; }
 .footer-links {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px 24px;
 }
 .footer-links a {
   color: var(--text-hint);

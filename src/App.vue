@@ -61,23 +61,31 @@
       <EvolutionTimeline />
     </SectionWrapper>
 
-    <!-- ===== 口述记忆 ===== -->
+    <!-- ===== 声音与数据的对话 ===== -->
     <SectionWrapper
-      section-id="oral"
-      title="口述记忆"
-      subtitle="村民、商贩、老人的声音记忆"
+      section-id="voices"
+      title="寻常之人 · 千年之寺"
+      subtitle="香客之外，普通人眼里的千年佛寺——同题之下，听听不同的说法"
     >
-      <OralArchive />
+      <DialogueView />
+    </SectionWrapper>
+
+    <!-- ===== 采访实录 ===== -->
+    <SectionWrapper
+      section-id="interviews"
+      title="采访实录"
+      subtitle="游客、本地从业者与居民 · 录音、配图与字幕同步呈现"
+    >
+      <InterviewPlayer />
     </SectionWrapper>
 
     <!-- ===== 数据发现 ===== -->
     <SectionWrapper
       section-id="data"
       title="数据发现"
-      subtitle="词云 · 趋势分析 · 问卷统计 · 声音与数据的对话"
+      subtitle="词云 · 趋势分析 · 问卷统计"
     >
       <DataFindings />
-      <DialogueView />
     </SectionWrapper>
 
     <!-- ===== 研究手记 ===== -->
@@ -145,12 +153,14 @@ import CaveComparison from './components/findings/CaveComparison.vue'
 import SanjiaoHall from './components/findings/SanjiaoHall.vue'
 import EvolutionTimeline from './components/findings/EvolutionTimeline.vue'
 
-// 口述记忆
-import OralArchive from './components/oral/OralArchive.vue'
+// 声音与数据的对话
+import DialogueView from './components/data/DialogueView.vue'
+
+// 采访实录
+import InterviewPlayer from './components/gallery/InterviewPlayer.vue'
 
 // 数据
 import DataFindings from './components/data/DataFindings.vue'
-import DialogueView from './components/data/DialogueView.vue'
 
 // 研究手记
 import ResearchConclusion from './components/conclusion/ResearchConclusion.vue'
@@ -293,7 +303,7 @@ code {
 }
 
 #space,
-#oral,
+#voices,
 #conclusion,
 #about {
   background: var(--bg-surface);
@@ -333,7 +343,7 @@ code {
   }
 
   #home, #timeline, #baseline, #space, #findings,
-  #oral, #data, #conclusion, #media, #about {
+  #voices, #data, #conclusion, #media, #about {
     background: #fff !important;
   }
 

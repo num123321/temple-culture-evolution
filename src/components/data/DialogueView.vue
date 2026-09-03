@@ -1,53 +1,35 @@
 <template>
   <div class="dialogue-view">
-    <h3 class="dv-title">声音与数据的对话</h3>
-    <p class="dv-intro">
-      将口述质性材料与量化数据并置，寻找主观经验与客观证据之间的张力与印证。
-    </p>
     <div class="dv-grid">
-      <div
-        v-for="d in dialogues"
-        :key="d.id"
-        class="dv-card"
-      >
+      <div v-for="d in dialogues" :key="d.id" class="dv-card">
         <h4 class="dv-card-title">{{ d.title }}</h4>
 
         <p v-if="d.question" class="dv-question">
-          <span class="dv-question-label">对话问题</span>
+          <span class="dv-question-label">这一问</span>
           <span class="dv-question-text">{{ d.question }}</span>
         </p>
 
-        <div class="dv-pair">
-          <!-- 声音 -->
-          <div class="dv-oral">
-            <div class="pair-label">🗣️ 声音</div>
-            <p class="oral-source">{{ d.oralExcerpt.interviewee }}</p>
-            <blockquote v-if="d.oralExcerpt.quote !== '[待填入口述原文]'">
-              "{{ d.oralExcerpt.quote }}"
-            </blockquote>
-            <p v-else class="placeholder">[待填入口述原文]</p>
-            <p class="oral-context">{{ d.oralExcerpt.context }}</p>
-          </div>
-
-          <!-- 数据 -->
-          <div class="dv-data">
-            <div class="pair-label">📊 数据</div>
-            <span class="data-type">{{ d.dataEvidence.type }}</span>
-            <p class="data-desc">{{ d.dataEvidence.description }}</p>
-            <p v-if="d.dataEvidence.finding !== '[待填入数据发现]'" class="data-finding">
-              {{ d.dataEvidence.finding }}
-            </p>
-            <p v-else class="placeholder">[待填入数据发现]</p>
+        <!-- 同题观点对照 -->
+        <div class="dv-voices">
+          <div v-for="(v, i) in d.voices" :key="v.slug || i" class="dv-voice">
+            <div class="dv-voice-head">
+              <span class="dv-voice-side">{{ i === 0 ? '一方' : '另一方' }}</span>
+              <span class="dv-voice-name">{{ v.person }}</span>
+              <span class="dv-voice-role">{{ v.role }}</span>
+            </div>
+            <blockquote class="dv-voice-quote">“{{ v.quote }}”</blockquote>
+            <button
+              v-if="v.slug"
+              class="dv-listen-btn"
+              @click="listenInterview(v.slug)"
+            >🎧 收听原声</button>
           </div>
         </div>
 
-        <!-- 张力命题 -->
-        <div class="dv-tension">
-          <div class="pair-label">⚡ 张力命题</div>
-          <p>{{ d.tension.description !== '[待填入张力分析]' ? d.tension.description : '[待填入张力分析]' }}</p>
-          <p v-if="d.tension.resolution !== '[待填入综合解释]'" class="resolution">
-            <strong>综合解释：</strong>{{ d.tension.resolution }}
-          </p>
+        <!-- 众声之间：编者视角的归纳 -->
+        <div class="dv-note">
+          <span class="dv-note-label">众声之间</span>
+          <p class="dv-note-text">{{ d.note }}</p>
         </div>
       </div>
     </div>
@@ -57,12 +39,17 @@
 <script setup>
 import { getAllDialogues } from '../../data/dialogue.js'
 const dialogues = getAllDialogues()
+
+// 跳转到「采访实录」区块并播放对应受访者原声
+const listenInterview = (slug) => {
+  document.dispatchEvent(new CustomEvent('play-interview', { detail: { slug } }))
+  const el = document.getElementById('interviews')
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
 </script>
 
 <style scoped>
 .dialogue-view { max-width: 1000px; margin: 0 auto; }
-.dv-title { font-size: 22px; font-weight: 700; color: var(--text-heading); margin: 0 0 8px; text-align: center; }
-.dv-intro { text-align: center; font-size: 14px; color: var(--text-muted); margin: 0 0 32px; }
 .dv-grid { display: flex; flex-direction: column; gap: 24px; }
 .dv-card {
   background: var(--bg-card);
@@ -71,10 +58,10 @@ const dialogues = getAllDialogues()
   box-shadow: 0 2px 12px var(--shadow-sm);
 }
 .dv-card-title {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--text-heading);
-  margin: 0 0 20px;
+  margin: 0 0 16px;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--bg-hover);
 }
@@ -82,7 +69,7 @@ const dialogues = getAllDialogues()
   display: flex;
   align-items: baseline;
   gap: 10px;
-  margin: -6px 0 20px;
+  margin: 0 0 20px;
   padding: 12px 16px;
   background: linear-gradient(90deg, var(--bg-surface), transparent);
   border-left: 3px solid var(--accent-violet);
@@ -104,53 +91,83 @@ const dialogues = getAllDialogues()
   color: var(--text-heading);
   line-height: 1.6;
 }
-.dv-pair {
+
+/* 同题观点对照 */
+.dv-voices {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
 }
-.dv-oral, .dv-data {
+.dv-voice {
   background: var(--bg-surface);
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 18px;
+  border-top: 3px solid var(--accent-violet);
+  display: flex;
+  flex-direction: column;
 }
-.pair-label {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 8px;
+.dv-voice-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
 }
-.oral-source { font-size: 13px; color: var(--text-muted); margin: 0 0 8px; }
-.dv-oral blockquote {
-  margin: 0 0 8px;
-  padding: 10px 14px;
-  border-left: 3px solid var(--accent);
+.dv-voice-side {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-violet);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 1px 7px;
+}
+.dv-voice-name { font-size: 16px; font-weight: 700; color: var(--text-heading); }
+.dv-voice-role { font-size: 12px; color: var(--text-muted); }
+.dv-voice-quote {
+  margin: 0 0 14px;
+  padding: 0 2px;
   font-size: 14px;
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: 1.8;
   font-style: italic;
+  flex: 1;
 }
-.oral-context { font-size: 12px; color: var(--text-hint); margin: 0; }
-.data-type {
-  display: inline-block;
-  padding: 2px 10px;
-  background: var(--bg-elevated);
-  border-radius: 6px;
-  font-size: 11px;
-  color: var(--accent-violet);
+.dv-listen-btn {
+  align-self: flex-start;
+  padding: 5px 14px;
+  border: 1px solid var(--border-default);
+  border-radius: 16px;
+  background: var(--bg-card);
+  color: var(--accent);
+  font-size: 12px;
   font-weight: 600;
-  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
 }
-.data-desc { font-size: 13px; color: var(--text-secondary); margin: 0 0 6px; }
-.data-finding { font-size: 13px; color: var(--text-secondary); font-weight: 600; margin: 0; }
-.placeholder { font-size: 13px; color: var(--text-placeholder); font-style: italic; margin: 0; }
-.dv-tension {
+.dv-listen-btn:hover { border-color: var(--accent); background: var(--bg-hover); }
+
+/* 众声之间 */
+.dv-note {
   background: linear-gradient(135deg, #fefce8, var(--bg-surface));
   border-radius: 10px;
-  padding: 18px;
+  padding: 16px 18px;
 }
-.dv-tension p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin: 8px 0 0; }
-.resolution { margin-top: 8px !important; padding-top: 8px; border-top: 1px solid #f0e68c; }
-@media (max-width: 640px) { .dv-pair { grid-template-columns: 1fr; } }
+.dv-note-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-heading);
+  margin-bottom: 6px;
+}
+.dv-note-label::before { content: '◈ '; color: var(--accent-amber); }
+.dv-note-text {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+@media (max-width: 560px) {
+  .dv-voices { grid-template-columns: 1fr; }
+}
 </style>

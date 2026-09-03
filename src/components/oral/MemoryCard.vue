@@ -24,7 +24,11 @@
       >{{ tag }}</span>
     </div>
     <div class="mc-audio">
-      <div class="audio-placeholder">
+      <button v-if="memory.interviewSlug" class="mc-listen" @click="listenInterview(memory.interviewSlug)">
+        <span class="mc-listen-icon">🎧</span>
+        收听完整采访
+      </button>
+      <div v-else class="audio-placeholder">
         <span>🔊</span>
         <p>音频播放器（{{ memory.audioFile }}）</p>
         <p class="audio-hint">实际音频文件放入后，替换为真实播放控件</p>
@@ -41,6 +45,13 @@
 defineProps({
   memory: { type: Object, required: true }
 })
+
+// 请求“采访实录”播放器播放对应录音，并滚动到该区块
+const listenInterview = (slug) => {
+  document.dispatchEvent(new CustomEvent('play-interview', { detail: { slug } }))
+  const el = document.getElementById('interviews')
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
 </script>
 
 <style scoped>
@@ -106,6 +117,24 @@ defineProps({
   color: var(--text-muted);
 }
 .mc-audio { margin-bottom: 16px; }
+.mc-listen {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--border-default);
+  border-radius: 10px;
+  background: var(--bg-surface);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.mc-listen:hover { border-color: var(--accent); background: var(--bg-hover); }
+.mc-listen-icon { font-size: 15px; }
 .audio-placeholder {
   background: var(--bg-surface);
   border-radius: 8px;
