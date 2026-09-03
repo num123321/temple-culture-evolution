@@ -23,12 +23,20 @@ export const teamMembers = [
     id: 'member-3',
     name: '张旺胜',
     role: '成员',
-    responsibility: '口述访谈、文献整理',
+    responsibility: '文献研究、资料整理',
     avatar: '/temple-culture-evolution/images/team/zhang-wangsheng.jpg',
-    bio: '集成电路大一学生，兴趣广泛，喜欢通过访谈和文献研究深入了解历史文化。'
+    bio: '集成电路大一学生，负责碑刻题记与地方志等文献的搜集整理，为演变脉络的考订提供文献支撑。'
   },
   {
     id: 'member-4',
+    name: '赵浩轩',
+    role: '成员',
+    responsibility: '口述访谈、采访记录',
+    avatar: '/temple-culture-evolution/images/team/zhao-haoxuan.jpg',
+    bio: '集成电路大一学生，负责对村民、商贩与老人的采访与录音整理，为口述档案积累第一手素材。'
+  },
+  {
+    id: 'member-5',
     name: '腾飞宇',
     role: '指导教师',
     responsibility: '学术指导',
