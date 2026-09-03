@@ -12,6 +12,11 @@
       >
         <h4 class="dv-card-title">{{ d.title }}</h4>
 
+        <p v-if="d.question" class="dv-question">
+          <span class="dv-question-label">对话问题</span>
+          <span class="dv-question-text">{{ d.question }}</span>
+        </p>
+
         <div class="dv-pair">
           <!-- 声音 -->
           <div class="dv-oral">
@@ -36,9 +41,9 @@
           </div>
         </div>
 
-        <!-- 张力分析 -->
+        <!-- 张力命题 -->
         <div class="dv-tension">
-          <div class="pair-label">⚡ 张力分析</div>
+          <div class="pair-label">⚡ 张力命题</div>
           <p>{{ d.tension.description !== '[待填入张力分析]' ? d.tension.description : '[待填入张力分析]' }}</p>
           <p v-if="d.tension.resolution !== '[待填入综合解释]'" class="resolution">
             <strong>综合解释：</strong>{{ d.tension.resolution }}
@@ -72,6 +77,32 @@ const dialogues = getAllDialogues()
   margin: 0 0 20px;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--bg-hover);
+}
+.dv-question {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: -6px 0 20px;
+  padding: 12px 16px;
+  background: linear-gradient(90deg, var(--bg-surface), transparent);
+  border-left: 3px solid var(--accent-violet);
+  border-radius: 0 10px 10px 0;
+}
+.dv-question-label {
+  flex: 0 0 auto;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-violet);
+  letter-spacing: 1px;
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 1px 7px;
+}
+.dv-question-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-heading);
+  line-height: 1.6;
 }
 .dv-pair {
   display: grid;

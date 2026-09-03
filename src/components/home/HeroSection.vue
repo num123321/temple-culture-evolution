@@ -2,8 +2,8 @@
   <section id="home" class="hero-section">
     <!-- 背景照片层：无图时不渲染，渐变自动兜底 -->
     <img
-      v-if="heroConfig.bgImage"
-      :src="`/${heroConfig.bgImage}`"
+      v-if="heroBgUrl"
+      :src="heroBgUrl"
       class="hero-bg-image"
       alt=""
     />
@@ -45,9 +45,13 @@
  *                  建议范围 0.4~0.7，默认 0.5 平衡文字可读性与照片氛围
  */
 const heroConfig = {
-  bgImage: '',          // ← 填入 'images/hero-bg.jpg' 启用背景照片
+  bgImage: '',          // ← 填入 'images/hero-bg.jpg'（照片放 public/images/ 下）即可启用
   overlayOpacity: 0.5, // ← 调节遮罩透明度
 }
+
+// 自动拼接 base 前缀（/temple-culture-evolution/），保证本地与线上路径一致
+const BASE = import.meta.env.BASE_URL
+const heroBgUrl = heroConfig.bgImage ? BASE + heroConfig.bgImage.replace(/^\//, '') : ''
 
 const sites = ['华严寺', '善化寺', '云冈石窟', '悬空寺']
 

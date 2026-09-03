@@ -94,6 +94,19 @@
               </ul>
               <p v-if="stele.chainConclusion" class="sg-conclusion">※ {{ stele.chainConclusion }}</p>
             </template>
+
+            <template v-if="stele.photos && stele.photos.length">
+              <h5 class="sg-h5">碑刻照片</h5>
+              <div class="sg-photos">
+                <img
+                  v-for="(p, i) in stele.photos"
+                  :key="i"
+                  :src="photoUrl(p)"
+                  :alt="stele.title"
+                  loading="lazy"
+                />
+              </div>
+            </template>
           </div>
         </template>
 
@@ -111,6 +124,13 @@ import { ref } from 'vue'
 import { getAllSteles } from '../../data/steles.js'
 
 const steles = getAllSteles()
+
+// photos 中存相对 public 的路径，此处自动拼 base 前缀
+const BASE = import.meta.env.BASE_URL
+const photoUrl = (p) =>
+  typeof p === 'string' && /^https?:\/\//.test(p)
+    ? p
+    : BASE + String(p || '').replace(/^\//, '')
 
 // 存在以下任一字段即视为有"研究详情"可展开
 const DETAIL_FIELDS = [
@@ -265,4 +285,19 @@ const toggleDetail = (id) => {
   color: var(--text-secondary);
   line-height: 1.8;
 }
+
+.sg-photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.sg-photos img {
+  width: 110px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px var(--shadow-sm);
+  transition: transform 0.2s ease;
+}
+.sg-photos img:hover { transform: scale(1.05); }
 </style>

@@ -1,11 +1,15 @@
 /**
  * 声音与数据的对话映射
  * 对应 DialogueView 组件 — 将口述质性材料与量化数据并置展示
+ *
+ * 每组的「对话问题」为简洁干练的点题提问；
+ * 张力命题先行放一句干练判断，口述原文 / 数据发现 / 综合解释仍待实地材料回填。
  */
 export const dialogues = [
   {
     id: 'd1',
-    title: '"没人拜佛了" vs 游客量数据',
+    title: '香火渐冷 · 人潮愈热',
+    question: '香火淡了——是不信，还是不来？',
     oralExcerpt: {
       interviewee: '张大爷',
       quote: '[待填入口述原文]',
@@ -17,13 +21,14 @@ export const dialogues = [
       finding: '[待填入数据发现]'
     },
     tension: {
-      description: '[待填入张力分析]',
+      description: '同一座寺里，"信"在退场，"游"在进场。',
       resolution: '[待填入综合解释]'
     }
   },
   {
     id: 'd2',
-    title: '"以前这儿就是咱村的地" vs 空间功能演变',
+    title: '村地记忆 · 景区现实',
+    question: '从前是咱村的地，如今成了谁的景？',
     oralExcerpt: {
       interviewee: '李阿姨',
       quote: '[待填入口述原文]',
@@ -35,13 +40,14 @@ export const dialogues = [
       finding: '[待填入数据发现]'
     },
     tension: {
-      description: '[待填入张力分析]',
+      description: '空间的"权属"变了，记忆里的"归属"却还留在村里。',
       resolution: '[待填入综合解释]'
     }
   },
   {
     id: 'd3',
-    title: '\"小时候还去烧香\" vs 三教殿使用现状',
+    title: '香火记忆 · 消费现场',
+    question: '烧香，如今是心愿，还是消遣？',
     oralExcerpt: {
       interviewee: '刘奶奶',
       quote: '[待填入口述原文]',
@@ -53,7 +59,7 @@ export const dialogues = [
       finding: '[待填入数据发现]'
     },
     tension: {
-      description: '[待填入张力分析]',
+      description: '"烧香"从婚丧嫁娶的日常礼俗，退成景区里被观看的符号。',
       resolution: '[待填入综合解释]'
     }
   }

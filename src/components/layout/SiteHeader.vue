@@ -62,7 +62,8 @@ const navGroups = [
     id: 'baseline', label: '空间分析',
     children: [
       { id: 'baseline', label: '历史回望' },
-      { id: 'space', label: '空间故事' }
+      { id: 'space', label: '空间故事' },
+      { id: 'gallery', label: '实景影像' }
     ]
   },
   { id: 'findings', label: '专题发现', children: [] },

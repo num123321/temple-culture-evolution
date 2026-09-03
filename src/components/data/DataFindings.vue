@@ -25,12 +25,21 @@
     <div class="df-section">
       <h3 class="df-title">{{ questionnaire.title }}</h3>
       <p class="df-subtitle">
-        调查时间：{{ questionnaire.surveyDate }} · 回收 {{ questionnaire.totalResponses }} 份
+        调查时间：{{ questionnaire.surveyDate }} · 现场发放的简洁问卷共 {{ questionnaire.questions.length }} 题
       </p>
-      <div class="df-survey-placeholder">
-        <span>📊</span>
-        <p>问卷数据可视化将在此展示（柱状图 / 饼图）</p>
-        <p class="hint">请填入实际回收的问卷数据</p>
+      <div class="df-survey">
+        <ol class="survey-list">
+          <li v-for="(q, qi) in questionnaire.questions" :key="q.id" class="survey-item">
+            <div class="survey-q-head">
+              <span class="survey-no">{{ qi + 1 }}</span>
+              <span class="survey-type">{{ q.type === 'multiple' ? '多选' : '单选' }}</span>
+              <span class="survey-q-text">{{ q.text }}</span>
+            </div>
+            <div class="survey-opts">
+              <span v-for="opt in q.options" :key="opt" class="survey-opt">{{ opt }}</span>
+            </div>
+          </li>
+        </ol>
       </div>
     </div>
   </div>
@@ -64,14 +73,65 @@ const questionnaire = getQuestionnaireData()
   color: var(--text-hint);
   margin: 0 0 24px;
 }
-.df-survey-placeholder {
+/* ── 简洁问卷展示 ── */
+.df-survey {
   background: var(--bg-surface);
-  border-radius: 12px;
-  padding: 48px;
-  text-align: center;
-  border: 2px dashed var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: 14px;
+  padding: 28px 32px;
+  max-width: 720px;
+  margin: 0 auto;
 }
-.df-survey-placeholder span { font-size: 40px; }
-.df-survey-placeholder p { font-size: 15px; color: var(--text-hint); margin: 12px 0 0; }
-.hint { font-size: 12px !important; color: var(--text-placeholder) !important; }
+.survey-list { list-style: none; margin: 0; padding: 0; }
+.survey-item {
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px dashed var(--bg-elevated);
+}
+.survey-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.survey-q-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.survey-no {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.survey-type {
+  flex: 0 0 auto;
+  font-size: 11px;
+  color: var(--accent-violet);
+  border: 1px solid var(--border-default);
+  border-radius: 6px;
+  padding: 1px 6px;
+}
+.survey-q-text {
+  color: var(--text-heading);
+  font-weight: 600;
+}
+.survey-opts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-left: 32px;
+}
+.survey-opt {
+  font-size: 13px;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--bg-elevated);
+  padding: 4px 12px;
+  border-radius: 14px;
+}
 </style>

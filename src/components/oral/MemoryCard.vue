@@ -6,6 +6,12 @@
     </div>
     <h4 class="mc-interviewee">{{ memory.interviewee }}</h4>
     <p class="mc-role">{{ memory.role }}</p>
+
+    <div v-if="memory.question" class="mc-question">
+      <span class="mc-question-label">💬 提问词</span>
+      <p class="mc-question-text">“{{ memory.question }}”</p>
+    </div>
+
     <p class="mc-theme">
       <span class="theme-label">主题：</span>{{ memory.theme }}
     </p>
@@ -66,6 +72,28 @@ defineProps({
   margin: 0 0 4px;
 }
 .mc-role { font-size: 13px; color: var(--text-muted); margin: 0 0 12px; }
+.mc-question {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  background: var(--bg-surface);
+  border-left: 3px solid var(--accent-violet);
+  border-radius: 0 8px 8px 0;
+}
+.mc-question-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--accent-violet);
+  margin-bottom: 4px;
+}
+.mc-question-text {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-heading);
+  line-height: 1.6;
+}
 .mc-theme { font-size: 14px; color: var(--text-secondary); margin: 0 0 8px; }
 .theme-label { font-weight: 600; color: var(--text-heading); }
 .mc-summary { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin: 0 0 12px; }

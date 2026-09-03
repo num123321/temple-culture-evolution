@@ -39,6 +39,15 @@
       <FloorPlanViewer :active-site="activeSpaceSite" />
     </SectionWrapper>
 
+    <!-- ===== 实景影像 ===== -->
+    <SectionWrapper
+      section-id="gallery"
+      title="实景影像"
+      subtitle="田野途中的现场照片档案 —— 大殿 · 石窟 · 村落"
+    >
+      <PhotoGallery />
+    </SectionWrapper>
+
     <!-- ===== 专题发现 ===== -->
     <SectionWrapper
       section-id="findings"
@@ -125,6 +134,9 @@ import HistoryBaseline from './components/baseline/HistoryBaseline.vue'
 // 空间
 import SiteSelector from './components/space/SiteSelector.vue'
 import FloorPlanViewer from './components/space/FloorPlanViewer.vue'
+
+// 实景影像
+import PhotoGallery from './components/gallery/PhotoGallery.vue'
 
 // 专题发现
 import StatueConfig from './components/findings/StatueConfig.vue'
