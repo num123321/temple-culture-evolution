@@ -19,7 +19,7 @@
     <div class="hero-content">
       <p class="hero-kicker">田野调研 · 2026 夏</p>
       <h1 class="hero-title">
-        从<span class="highlight">"神位"</span>到<span class="highlight">"人位"</span>
+        <span class="highlight">山门内外</span> · 千年佛寺的嬗变
       </h1>
       <p class="hero-desc">
         千年佛寺空间功能的演变 —— 基于大同华严寺、善化寺、云冈石窟与悬空寺的田野考察

@@ -5,7 +5,7 @@
         <span class="footer-icon">🏛️</span>
         <div>
           <p class="footer-title">佛寺文化演变 · 社会实践项目</p>
-          <p class="footer-subtitle">从"神位"到"人位"：千年佛寺空间功能演变考察</p>
+          <p class="footer-subtitle">山门内外 · 千年佛寺的嬗变——空间功能演变考察</p>
         </div>
       </div>
       <div class="footer-links">
@@ -17,7 +17,6 @@
         <a href="#voices">寻常之人 · 千年之寺</a>
         <a href="#data">数据发现</a>
         <a href="#conclusion">研究手记</a>
-        <a href="#media">影像记录</a>
         <a href="#about">关于我们</a>
       </div>
       <p class="footer-copy">© 2026 赓续文化基因 · 社会实践项目</p>

@@ -19,7 +19,7 @@ export const webCloudData = {
 
 export const evolutionTrendData = {
   title: '佛寺功能演变趋势',
-  subtitle: '从"神位"到"人位"的量化观察',
+  subtitle: '宗教功能 → 旅游功能的量化观察',
   xAxis: ['辽代', '金代', '元代', '明代', '清代', '民国', '当代'],
   series: [
     {

@@ -97,15 +97,6 @@
       <ResearchConclusion />
     </SectionWrapper>
 
-    <!-- ===== 影像记录 ===== -->
-    <SectionWrapper
-      section-id="media"
-      title="影像记录"
-      subtitle="实践活动微视频"
-    >
-      <VideoPlayer />
-    </SectionWrapper>
-
     <!-- ===== 关于我们 ===== -->
     <SectionWrapper
       section-id="about"
@@ -164,9 +155,6 @@ import DataFindings from './components/data/DataFindings.vue'
 
 // 研究手记
 import ResearchConclusion from './components/conclusion/ResearchConclusion.vue'
-
-// 影像
-import VideoPlayer from './components/media/VideoPlayer.vue'
 
 // 团队
 import TeamGrid from './components/about/TeamGrid.vue'
@@ -297,8 +285,7 @@ code {
 #timeline,
 #baseline,
 #findings,
-#data,
-#media {
+#data {
   background: var(--bg-card);
 }
 
@@ -320,7 +307,6 @@ code {
   .site-footer,
   .theme-toggle,
   .mobile-toggle,
-  #media video,
   .floor-plan-viewer__canvas,
   .echarts {
     display: none !important;
@@ -343,7 +329,7 @@ code {
   }
 
   #home, #timeline, #baseline, #space, #findings,
-  #voices, #data, #conclusion, #media, #about {
+  #voices, #data, #conclusion, #about {
     background: #fff !important;
   }
 
