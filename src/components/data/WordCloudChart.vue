@@ -1,5 +1,5 @@
 <template>
-  <div class="wordcloud-chart">
+  <div class="wordcloud-chart" :class="{ large }">
     <div v-if="hasWords" ref="chartRef" class="chart-container"></div>
     <p v-else class="chart-empty">
       📝 暂无词云数据<br />
@@ -14,7 +14,9 @@ import * as echarts from 'echarts'
 import 'echarts-wordcloud'
 
 const props = defineProps({
-  data: { type: Object, required: true }
+  data: { type: Object, required: true },
+  // 大尺寸模式：用于“网络语境 · 佛寺热词”等需更醒目的词云
+  large: { type: Boolean, default: false }
 })
 
 const chartRef = ref(null)
@@ -58,7 +60,11 @@ watch(() => props.data, () => renderChart(), { deep: true })
 
 <style scoped>
 .wordcloud-chart { max-width: 700px; margin: 0 auto; }
+.wordcloud-chart.large { max-width: 960px; }
 .chart-container { width: 100%; height: 420px; }
+.wordcloud-chart.large .chart-container {
+  height: 560px;
+}
 .chart-empty {
   text-align: center;
   color: var(--text-placeholder);

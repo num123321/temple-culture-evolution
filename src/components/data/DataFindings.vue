@@ -11,7 +11,7 @@
     <div class="df-section">
       <h3 class="df-title">{{ webCloud.title }}</h3>
       <p class="df-subtitle">数据来源：{{ webCloud.source }}</p>
-      <WordCloudChart :data="webCloud" />
+      <WordCloudChart :data="webCloud" large />
     </div>
 
     <!-- 演变趋势折线图 -->
