@@ -29,7 +29,7 @@ export const conclusions = {
   limitations: [
     {
       category: '时间范围',
-      description: '调研仅持续六天，对每个调研点的观察时间有限，难以捕捉长期变化趋势。',
+      description: '调研仅持续四天，对每个调研点的观察时间有限，难以捕捉长期变化趋势。',
       impact: '演变脉络的精细度不足',
       mitigation: '通过历史文献补充长时段趋势'
     },

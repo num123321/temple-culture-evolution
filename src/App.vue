@@ -12,7 +12,7 @@
     <SectionWrapper
       section-id="timeline"
       title="调研历程"
-      subtitle="七天社会实践的每日概要"
+      subtitle="四天社会实践的每日概要"
     >
       <TimelineSection />
     </SectionWrapper>
