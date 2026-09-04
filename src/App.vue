@@ -97,6 +97,15 @@
       <ResearchConclusion />
     </SectionWrapper>
 
+    <!-- ===== 总结视频 ===== -->
+    <SectionWrapper
+      section-id="media"
+      title="总结视频"
+      subtitle="社会实践开展情况回顾 · 16:9"
+    >
+      <VideoPlayer />
+    </SectionWrapper>
+
     <!-- ===== 关于我们 ===== -->
     <SectionWrapper
       section-id="about"
@@ -155,6 +164,9 @@ import DataFindings from './components/data/DataFindings.vue'
 
 // 研究手记
 import ResearchConclusion from './components/conclusion/ResearchConclusion.vue'
+
+// 总结视频
+import VideoPlayer from './components/media/VideoPlayer.vue'
 
 // 团队
 import TeamGrid from './components/about/TeamGrid.vue'
@@ -285,7 +297,8 @@ code {
 #timeline,
 #baseline,
 #findings,
-#data {
+#data,
+#media {
   background: var(--bg-card);
 }
 
@@ -307,6 +320,7 @@ code {
   .site-footer,
   .theme-toggle,
   .mobile-toggle,
+  #media video,
   .floor-plan-viewer__canvas,
   .echarts {
     display: none !important;
@@ -329,7 +343,7 @@ code {
   }
 
   #home, #timeline, #baseline, #space, #findings,
-  #voices, #data, #conclusion, #about {
+  #voices, #data, #conclusion, #media, #about {
     background: #fff !important;
   }
 

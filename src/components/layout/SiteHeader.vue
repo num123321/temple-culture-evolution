@@ -78,7 +78,8 @@ const navGroups = [
   {
     id: 'conclusion', label: '研究总结',
     children: [
-      { id: 'conclusion', label: '研究手记' }
+      { id: 'conclusion', label: '研究手记' },
+      { id: 'media', label: '总结视频' }
     ]
   },
   { id: 'about', label: '关于我们', children: [] }

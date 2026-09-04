@@ -29,7 +29,7 @@ export const teamMembers = [
   },
   {
     id: 'member-4',
-    name: '赵浩轩',
+    name: '赵皓轩',
     role: '成员',
     responsibility: '口述访谈、采访记录',
     avatar: '/temple-culture-evolution/images/team/zhao-haoxuan.jpg',

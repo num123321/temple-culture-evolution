@@ -17,6 +17,7 @@
         <a href="#voices">寻常之人 · 千年之寺</a>
         <a href="#data">数据发现</a>
         <a href="#conclusion">研究手记</a>
+        <a href="#media">总结视频</a>
         <a href="#about">关于我们</a>
       </div>
       <p class="footer-copy">© 2026 赓续文化基因 · 社会实践项目</p>
