@@ -1,26 +1,68 @@
 <template>
   <div class="wordcloud-chart">
-    <div class="chart-container">
-      <p class="chart-empty">
-        📝 词云数据将在访谈转录完成后填充<br>
-        <small>（需安装 echarts-wordcloud 扩展包：npm install echarts-wordcloud）</small>
-      </p>
-    </div>
+    <div v-if="hasWords" ref="chartRef" class="chart-container"></div>
+    <p v-else class="chart-empty">
+      📝 暂无词云数据<br />
+      <small>（访谈转录完成后自动生成关键词）</small>
+    </p>
   </div>
 </template>
 
 <script setup>
-defineProps({
+import { ref, computed, onMounted, watch } from 'vue'
+import * as echarts from 'echarts'
+import 'echarts-wordcloud'
+
+const props = defineProps({
   data: { type: Object, required: true }
 })
 
-// 词云图需要 echarts-wordcloud 扩展包
-// 安装方式：npm install echarts-wordcloud
-// 当前数据为空，仅展示占位提示
+const chartRef = ref(null)
+let chart = null
+
+const hasWords = computed(() => props.data.words && props.data.words.length > 0)
+
+// 词云配色（与站点主题色一致）
+const PALETTE = ['#8b5cf6', '#f59e0b', '#ef4444', '#10b981', '#3b82f6', '#ec4899']
+
+const renderChart = () => {
+  if (!chartRef.value || !hasWords.value) return
+  if (!chart) chart = echarts.init(chartRef.value)
+  chart.setOption({
+    tooltip: {},
+    series: [
+      {
+        type: 'wordCloud',
+        shape: 'circle',
+        left: 'center',
+        top: 'center',
+        width: '92%',
+        height: '92%',
+        gridSize: 10,
+        sizeRange: [12, 54],
+        rotationRange: [0, 0],
+        textStyle: {
+          fontWeight: 'bold',
+          color: () => PALETTE[Math.floor(Math.random() * PALETTE.length)]
+        },
+        emphasis: { focus: 'self' },
+        data: props.data.words
+      }
+    ]
+  })
+}
+
+onMounted(() => renderChart())
+watch(() => props.data, () => renderChart(), { deep: true })
 </script>
 
 <style scoped>
 .wordcloud-chart { max-width: 700px; margin: 0 auto; }
-.chart-container { width: 100%; height: 400px; }
-.chart-empty { text-align: center; color: var(--text-placeholder); font-size: 15px; padding: 80px 0; }
+.chart-container { width: 100%; height: 420px; }
+.chart-empty {
+  text-align: center;
+  color: var(--text-placeholder);
+  font-size: 15px;
+  padding: 80px 0;
+}
 </style>

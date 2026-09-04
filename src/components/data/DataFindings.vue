@@ -46,7 +46,10 @@
       <div class="df-result">
         <div class="df-result-head">
           <h4 class="df-result-title">📊 调查结果</h4>
-          <span v-if="questionnaire.totalResponses" class="df-result-count">有效回收 {{ questionnaire.totalResponses }} 份</span>
+          <span v-if="questionnaire.totalResponses" class="df-result-count">
+            {{ questionnaire.preview ? '预估样本' : '有效回收' }} {{ questionnaire.totalResponses }} 份
+            <span v-if="questionnaire.preview" class="df-result-preview">（预测演示，待实测替换）</span>
+          </span>
           <span v-else class="df-result-count">回收统计中</span>
         </div>
 
@@ -87,10 +90,12 @@ const questionnaire = getQuestionnaireData()
 // 仅返回已有数据结果的题目
 const surveyQuestions = () =>
   questionnaire.questions.filter((q) => q.results && Object.keys(q.results).length)
-// 该选项在本题的计数占比（用于条形宽度）
+// 该选项占比：单选=人数/回收总数；多选=选择人数/回收总数（即“选择率”），与问卷口径一致
 const pctOf = (q, val) => {
-  const total = Object.values(q.results || {}).reduce((a, b) => a + Number(b || 0), 0)
-  return total ? Math.round((Number(val) / total) * 100) : 0
+  const base =
+    Number(questionnaire.totalResponses) ||
+    Object.values(q.results || {}).reduce((a, b) => a + Number(b || 0), 0)
+  return base ? Math.round((Number(val) / base) * 100) : 0
 }
 </script>
 
@@ -190,6 +195,7 @@ const pctOf = (q, val) => {
 }
 .df-result-title { margin: 0; font-size: 15px; font-weight: 700; color: var(--text-heading); }
 .df-result-count { font-size: 12px; color: var(--text-hint); }
+.df-result-preview { color: var(--accent-amber); font-size: 11px; }
 .df-result-empty {
   margin: 0;
   padding: 26px 18px;
