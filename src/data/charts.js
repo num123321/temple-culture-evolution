@@ -3,11 +3,18 @@
  * 对应 WordCloudChart / TrendLineChart 组件
  */
 import { wordcloudWords } from './wordcloudWords.js'
+import { webcloudWords } from './webcloudWords.js'
 
 export const wordCloudData = {
   title: '访谈关键词词云',
   source: '口述记忆转录文本（5 段采访字幕）',
   words: wordcloudWords
+}
+
+export const webCloudData = {
+  title: '网络语境 · 佛寺热词',
+  source: '公开网页与网友攻略评论（云冈百科 · 小红书等）',
+  words: webcloudWords
 }
 
 export const evolutionTrendData = {
@@ -48,5 +55,6 @@ export const visitorFlowData = {
 }
 
 export const getWordCloudData = () => wordCloudData
+export const getWebCloudData = () => webCloudData
 export const getEvolutionTrendData = () => evolutionTrendData
 export const getVisitorFlowData = () => visitorFlowData

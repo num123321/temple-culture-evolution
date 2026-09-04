@@ -7,6 +7,13 @@
       <WordCloudChart :data="wordCloud" />
     </div>
 
+    <!-- 网络语境词云（公开网页来源） -->
+    <div class="df-section">
+      <h3 class="df-title">{{ webCloud.title }}</h3>
+      <p class="df-subtitle">数据来源：{{ webCloud.source }}</p>
+      <WordCloudChart :data="webCloud" />
+    </div>
+
     <!-- 演变趋势折线图 -->
     <div class="df-section">
       <h3 class="df-title">{{ evoTrend.title }}</h3>
@@ -76,12 +83,13 @@
 </template>
 
 <script setup>
-import { getWordCloudData, getEvolutionTrendData, getVisitorFlowData } from '../../data/charts.js'
+import { getWordCloudData, getWebCloudData, getEvolutionTrendData, getVisitorFlowData } from '../../data/charts.js'
 import { getQuestionnaireData } from '../../data/questionnaires.js'
 import WordCloudChart from './WordCloudChart.vue'
 import TrendLineChart from './TrendLineChart.vue'
 
 const wordCloud = getWordCloudData()
+const webCloud = getWebCloudData()
 const evoTrend = getEvolutionTrendData()
 const visitorFlow = getVisitorFlowData()
 const questionnaire = getQuestionnaireData()
