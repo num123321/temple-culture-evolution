@@ -13,7 +13,7 @@ export const sites = [
     description: '辽代皇家敕建寺院，坐西朝东（契丹崇日习俗），以大雄宝殿（上寺）和薄伽教藏殿（下寺）为核心，是现存规模最大的辽金寺院建筑群之一。',
     keyFeatures: ['大雄宝殿', '薄伽教藏殿', '天宫楼阁壁藏', '五方佛配置'],
     planImage: 'plans/huayan-plan.jpg',
-    relatedDays: [2]
+    relatedDays: [3]   // 华严寺 → D3（辽金与碑刻专项）
   },
   {
     id: 'shansi',
@@ -26,7 +26,7 @@ export const sites = [
     description: '现存布局最完整的辽金寺院之一，中轴线依次为山门、三圣殿、大雄宝殿，两侧配以普贤阁、文殊阁。',
     keyFeatures: ['大雄宝殿', '三圣殿', '普贤阁', '文殊阁', '五龙壁'],
     planImage: 'plans/shanhua-plan.jpg',
-    relatedDays: [2]
+    relatedDays: [3]   // 善化寺 → D3（顺访）
   },
   {
     id: 'yungang',
@@ -39,7 +39,7 @@ export const sites = [
     description: '世界文化遗产，中国三大石窟之一，现存主要洞窟45个，附属洞窟209个，造像51000余尊。分为早（昙曜五窟）、中、晚三期。',
     keyFeatures: ['昙曜五窟（16-20窟）', '中期双窟', '晚期小型龛窟', '碑刻题记'],
     planImage: 'plans/yungangshuku-plan.jpg',
-    relatedDays: [3, 4]
+    relatedDays: [4]   // 云冈石窟 → D4
   },
   {
     id: 'xuankong',
@@ -52,7 +52,7 @@ export const sites = [
     description: '悬于恒山峭壁之上，以"奇、悬、巧"著称。寺内同时供奉儒释道三教，三教殿是全国唯一的三教合一殿堂。',
     keyFeatures: ['三教殿', '悬空结构', '栈道系统', '三圣殿', '大雄殿'],
     planImage: 'plans/xuankongsi-plan.png',
-    relatedDays: [5, 6]
+    relatedDays: [2, 3]   // 悬空寺 → D2、D3
   }
 ]
 

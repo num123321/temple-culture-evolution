@@ -19,7 +19,7 @@ export const webCloudData = {
 
 export const evolutionTrendData = {
   title: '佛寺功能演变趋势',
-  subtitle: '宗教功能 → 旅游功能的量化观察',
+  subtitle: '宗教 → 旅游 → 文化教育功能的量化观察',
   xAxis: ['辽代', '金代', '元代', '明代', '清代', '民国', '当代'],
   series: [
     {
@@ -34,7 +34,7 @@ export const evolutionTrendData = {
     },
     {
       name: '文化教育指数',
-      data: [],
+      data: [1, 1, 1, 1, 2, 3, 6],
       color: '#10b981'
     }
   ],
@@ -43,7 +43,7 @@ export const evolutionTrendData = {
 
 export const visitorFlowData = {
   title: '调研期间游客流量观测',
-  source: 'Day 3 云冈石窟实地观测',
+  source: 'Day 4 云冈石窟实地观测',
   xAxis: ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
   series: [
     {

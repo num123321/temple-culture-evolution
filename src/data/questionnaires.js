@@ -8,7 +8,7 @@
  */
 export const questionnaireData = {
   title: '游客与信众问卷调查',
-  surveyDate: 'Day 3-6',
+  surveyDate: 'Day 2-4',
   totalResponses: 50,
   locations: ['华严寺', '云冈石窟', '悬空寺'],
   questions: [

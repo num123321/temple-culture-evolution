@@ -25,7 +25,7 @@ Vue3 + Vite（单页，多区块上下滚动）
 | `images/plans/` | 平面图 | 同名覆盖即可 |
 | `audio/interviews/` | 5 段采访录音 | 直接放同名文件 |
 | `srt/` | 采访字幕（UTF-8 SRT） | 直接放同名文件 |
-| `video/` | （“影像记录”模块已移除，此目录仅供素材备用） | — |
+| `video/` | 社会实践总结视频（现含 `practice-summary.mp4`，16:9） | 同名覆盖即自动生效 |
 | `images/steles/`、`images/hero-bg.jpg` | 碑刻照片 / 首页大图（可选） | 放入后在数据中登记 |
 
 > `scripts/` 下的 Python 脚本是**本地工具，不入库**（已在 .gitignore）。
@@ -39,7 +39,6 @@ Vue3 + Vite（单页，多区块上下滚动）
 | `sanjiao-hall.js` / `cave-comparison.js` | 三教殿专题 / 洞窟对比 | 改文本 |
 | `itinerary.js` | 调研历程（现为 Day1–4） | 增删每日条目 |
 | `interviews.js` | 采访实录元数据（音频/图片/字幕/身份） | 对应 `public/audio/interviews` 等 |
-| `oral-memories.js` | 口述记忆扩充内容（原区块已并入新模块，文件保留备用） | — |
 | `dialogue.js` | 「寻常之人 · 千年之寺」观点对照 | `voices[]` / `note` |
 | `charts.js` + `wordcloudWords.js` + `webcloudWords.js` | 三张图 + 两张词云 | 词云见下方"词云"节 |
 | `questionnaires.js` | 游客问卷 4 题与实测结果 | 改 `results` 计数即自动出条形 |
@@ -83,4 +82,4 @@ python scripts/gen-webcloud.py
 - 采访实录：5 段（游客 / 景区店员 / 本地大娘 / 环卫大爷 / 路边小贩）+ SRT 字幕
 - 碑刻档案：华严《重修薄伽教藏记》《大华严寺碑》· 云冈造像题记 · 悬空寺《重修悬空寺碑》
 - 问卷：实测 50 份（4 题条形分布）
-- 待办：Hero 首页大图 `images/hero-bg.jpg`（可选）、碑刻照片可选回填
+- 待办：Hero 首页大图 `images/hero-bg.jpg`（可选）、碑刻照片可选回填、热区分析 19 个点位现场实拍可选回填
