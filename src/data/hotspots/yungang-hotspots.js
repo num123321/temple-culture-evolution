@@ -9,7 +9,6 @@ export const yungangHotspots = [
     x: 20, y: 52,  // 相对位置百分比
     description: '昙曜五窟之一，北魏和平初年（460）始凿。主尊高约13.7米，结跏趺坐，因洞窟前壁早年崩塌而成露天，是云冈最具标志性的形象，也是"帝王即佛"神性空间的代表。',
     category: '“神位”巅峰',
-    photos: []
   },
   {
     id: 'y2',
@@ -17,7 +16,6 @@ export const yungangHotspots = [
     x: 26, y: 51,
     description: '昙曜五窟之一，北魏早期（460-470）开凿。主尊身披雕满千佛的袈裟，衣纹层叠繁复，胁侍与十方佛环绕，是早期帝佛合一艺术风格的典型。',
     category: '"神位"巅峰',
-    photos: []
   },
   {
     id: 'y3',
@@ -25,7 +23,6 @@ export const yungangHotspots = [
     x: 52, y: 50,
     description: '北魏中期（约471-494）开凿，中心塔柱式。四壁浮雕佛传故事三十余幅，供养人行列绵长，是云冈汉化、繁复风格的代表，也是"人间化"趋势初现之作。',
     category: '汉化转折',
-    photos: []
   },
   {
     id: 'y4',
@@ -33,7 +30,6 @@ export const yungangHotspots = [
     x: 43, y: 50,
     description: '窟内保存太和七年（483）《邑义信士女等五十四人造像记》，为云冈现存最早、文字最多的造像题记，见证民间邑社功德力量的兴起，是"神位"向"人位"过渡的关键证据。',
     category: '"人位"前奏',
-    photos: []
   },
   {
     id: 'y5',
@@ -41,6 +37,5 @@ export const yungangHotspots = [
     x: 6, y: 56,
     description: '北魏迁都洛阳后（494-525）民间开凿的小型窟龛，规模小、布局无统一规划，造像趋于程式化，象征石窟营建由皇家功德转向民间参与。',
     category: '"人位"崛起',
-    photos: []
   }
 ]

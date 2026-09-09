@@ -37,8 +37,7 @@ export const evolutionTrendData = {
       data: [1, 1, 1, 1, 2, 3, 6],
       color: '#10b981'
     }
-  ],
-  annotations: []
+  ]
 }
 
 export const visitorFlowData = {

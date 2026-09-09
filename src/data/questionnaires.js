@@ -62,12 +62,7 @@ export const questionnaireData = {
         '不太愿意': 2
       }
     }
-  ],
-  demographics: {
-    ageGroups: [],
-    education: [],
-    origin: []
-  }
+  ]
 }
 
 export const getQuestionnaireData = () => questionnaireData

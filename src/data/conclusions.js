@@ -41,7 +41,7 @@ export const conclusions = {
     },
     {
       category: '样本数量',
-      description: '口述访谈样本有限（6人），问卷回收量有待增加。',
+      description: '口述访谈样本有限（5人），问卷回收量有待增加。',
       impact: '量化分析的统计效力不足',
       mitigation: '强调研究的探索性与假说生成性质'
     },
