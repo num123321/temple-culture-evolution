@@ -20,9 +20,6 @@
               <li v-for="(e, j) in finding.evidence" :key="j">{{ e }}</li>
             </ul>
           </div>
-          <span class="kf-confidence" :class="'conf-' + (finding.confidence || 'low')">
-            置信度：{{ finding.confidence }}
-          </span>
         </div>
       </div>
     </div>
@@ -70,17 +67,8 @@ defineProps({
 }
 .kf-finding { font-size: 14px; color: var(--text-secondary); line-height: 1.8; margin: 0 0 12px; }
 .kf-placeholder { font-size: 14px; color: var(--text-placeholder); font-style: italic; margin: 0 0 12px; }
-.kf-evidence { margin-bottom: 12px; }
+.kf-evidence { margin-bottom: 0; }
 .kf-evidence h5 { font-size: 13px; color: var(--text-muted); margin: 0 0 6px; }
 .kf-evidence ul { margin: 0; padding-left: 18px; }
 .kf-evidence li { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
-.kf-confidence {
-  display: inline-block;
-  padding: 3px 14px;
-  border-radius: 10px;
-  font-size: 12px;
-  font-weight: 600;
-}
-.conf-低, .conf-低-中 { background: #fef2f2; color: var(--accent-red); }
-.conf-中 { background: #fffbeb; color: var(--accent-amber); }
 </style>

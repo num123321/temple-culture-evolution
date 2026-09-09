@@ -101,7 +101,7 @@
     <SectionWrapper
       section-id="media"
       title="总结视频"
-      subtitle="社会实践开展情况回顾 · 16:9"
+      subtitle="社会实践开展情况回顾"
     >
       <VideoPlayer />
     </SectionWrapper>

@@ -19,9 +19,6 @@
             />
           </div>
         </div>
-        <div v-else class="popup-photos empty">
-          <p class="photos-hint">📷 该点现场照片整理中</p>
-        </div>
 
         <!-- 点击照片放大查看 -->
         <div v-if="viewIndex >= 0" class="popup-viewer" @click.self="viewIndex = -1">
@@ -134,9 +131,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKey))
   border-radius: 10px;
   padding: 16px;
 }
-.popup-photos.empty { padding: 40px; text-align: center; }
 .photos-label { font-size: 13px; color: var(--text-muted); margin: 0 0 10px; }
-.photos-hint { color: var(--text-placeholder); font-size: 14px; margin: 0; }
 .popup-photo-list {
   display: flex;
   gap: 8px;
