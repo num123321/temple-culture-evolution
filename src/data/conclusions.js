@@ -57,16 +57,9 @@ export const conclusions = {
       impact: '解读的客观性需要警惕',
       mitigation: '多源证据交叉验证'
     }
-  ],
-  nextSteps: [
-    '补充文献考证，特别是地方志与寺院档案',
-    '扩大口述访谈样本，追踪关键报道人',
-    '与宗教社会学、建筑史学者交叉验证',
-    '探索跨区域比较（如五台山佛寺群）'
   ]
 }
 
 export const getConclusions = () => conclusions
 export const getKeyFindings = () => conclusions.keyFindings
 export const getLimitations = () => conclusions.limitations
-export const getNextSteps = () => conclusions.nextSteps
