@@ -1,7 +1,7 @@
 <template>
   <div class="stele-gallery">
     <h3 class="sg-title">碑刻题记</h3>
-    <p class="sg-intro">以下为调研中采集的碑刻题记选录，均已整理研究详情（含一处史实纠误）。</p>
+    <p class="sg-intro">以下为调研中采集的碑刻题记选录，均已整理研究详情。</p>
     <div class="sg-grid">
       <div
         v-for="stele in steles"
