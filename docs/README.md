@@ -26,7 +26,6 @@ Vue3 + Vite（单页，多区块上下滚动）
 | `audio/interviews/` | 5 段采访录音 | 直接放同名文件 |
 | `srt/` | 采访字幕（UTF-8 SRT） | 直接放同名文件 |
 | `video/` | 社会实践总结视频（现含 `practice-summary.mp4`，16:9） | 同名覆盖即自动生效 |
-| `images/steles/`、`images/hero-bg.jpg` | 碑刻照片 / 首页大图（可选） | 放入后在数据中登记 |
 
 > `scripts/` 下的 Python 脚本是**本地工具，不入库**（已在 .gitignore）。
 
@@ -35,7 +34,7 @@ Vue3 + Vite（单页，多区块上下滚动）
 | 文件 | 控制内容 | 常用改法 |
 |---|---|---|
 | `sites.js` / `history-baseline.js` | 调研地档案 / 历史回望关键节点 | 改文本即可 |
-| `statues.js` / `steles.js` | 神像对比 / 碑刻研究档案 | 碑刻支持 `people/details/chain/photos` 等详情字段 |
+| `statues.js` / `steles.js` | 神像对比 / 碑刻研究档案 | 碑刻支持 `people/details/chain` 等详情字段 |
 | `sanjiao-hall.js` / `cave-comparison.js` | 三教殿专题 / 洞窟对比 | 改文本 |
 | `itinerary.js` | 调研历程（现为 Day1–4） | 增删每日条目 |
 | `interviews.js` | 采访实录元数据（音频/图片/字幕/身份） | 对应 `public/audio/interviews` 等 |
@@ -82,4 +81,4 @@ python scripts/gen-webcloud.py
 - 采访实录：5 段（游客 / 景区店员 / 本地大娘 / 环卫大爷 / 路边小贩）+ SRT 字幕
 - 碑刻档案：华严《重修薄伽教藏记》《大华严寺碑》· 云冈造像题记 · 悬空寺《重修悬空寺碑》
 - 问卷：实测 50 份（4 题条形分布）
-- 待办：Hero 首页大图 `images/hero-bg.jpg`（可选）、碑刻照片可选回填、热区分析 19 个点位现场实拍可选回填
+- 说明：Hero 采用固定渐变背景（无背景图）；碑刻与热区暂无现场照片，热区已以扩充史料文字呈现

@@ -1,7 +1,7 @@
 <template>
   <div class="stele-gallery">
     <h3 class="sg-title">碑刻题记</h3>
-    <p class="sg-intro">以下为调研中采集的碑刻题记选录，均已整理研究详情（含一处史实纠误）；完整释文与高清照片将陆续补充。</p>
+    <p class="sg-intro">以下为调研中采集的碑刻题记选录，均已整理研究详情（含一处史实纠误）。</p>
     <div class="sg-grid">
       <div
         v-for="stele in steles"
@@ -94,26 +94,8 @@
               </ul>
               <p v-if="stele.chainConclusion" class="sg-conclusion">※ {{ stele.chainConclusion }}</p>
             </template>
-
-            <template v-if="stele.photos && stele.photos.length">
-              <h5 class="sg-h5">碑刻照片</h5>
-              <div class="sg-photos">
-                <img
-                  v-for="(p, i) in stele.photos"
-                  :key="i"
-                  :src="photoUrl(p)"
-                  :alt="stele.title"
-                  loading="lazy"
-                />
-              </div>
-            </template>
           </div>
         </template>
-
-        <div v-else class="stele-content-placeholder">
-          <span>📜</span>
-          <p>碑文释文与照片将在此展示</p>
-        </div>
       </div>
     </div>
   </div>
@@ -124,13 +106,6 @@ import { ref } from 'vue'
 import { getAllSteles } from '../../data/steles.js'
 
 const steles = getAllSteles()
-
-// photos 中存相对 public 的路径，此处自动拼 base 前缀
-const BASE = import.meta.env.BASE_URL
-const photoUrl = (p) =>
-  typeof p === 'string' && /^https?:\/\//.test(p)
-    ? p
-    : BASE + String(p || '').replace(/^\//, '')
 
 // 存在以下任一字段即视为有"研究详情"可展开
 const DETAIL_FIELDS = [
@@ -180,15 +155,6 @@ const toggleDetail = (id) => {
 }
 .stele-meta { font-size: 12px; color: var(--text-hint); margin-bottom: 12px; }
 .stele-summary { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin: 0 0 16px; }
-.stele-content-placeholder {
-  background: var(--bg-surface);
-  border-radius: 8px;
-  padding: 32px;
-  text-align: center;
-  border: 2px dashed var(--bg-elevated);
-}
-.stele-content-placeholder span { font-size: 32px; }
-.stele-content-placeholder p { font-size: 13px; color: var(--text-placeholder); margin: 8px 0 0; }
 
 /* ── 研究详情展开面板 ── */
 .sg-toggle {
@@ -285,19 +251,4 @@ const toggleDetail = (id) => {
   color: var(--text-secondary);
   line-height: 1.8;
 }
-
-.sg-photos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.sg-photos img {
-  width: 110px;
-  height: 84px;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 1px 4px var(--shadow-sm);
-  transition: transform 0.2s ease;
-}
-.sg-photos img:hover { transform: scale(1.05); }
 </style>

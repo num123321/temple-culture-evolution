@@ -1,19 +1,6 @@
 <template>
   <section id="home" class="hero-section">
-    <!-- 背景照片层：无图时不渲染，渐变自动兜底 -->
-    <img
-      v-if="heroBgUrl"
-      :src="heroBgUrl"
-      class="hero-bg-image"
-      alt=""
-    />
-    <!-- 暗色遮罩：可调透明度，压在照片上确保文字可读 -->
-    <div
-      v-if="heroConfig.bgImage"
-      class="hero-overlay-dark"
-      :style="{ opacity: heroConfig.overlayOpacity }"
-    ></div>
-    <!-- 紫色光晕装饰 -->
+    <!-- 纯渐变背景 + 紫色光晕装饰 -->
     <div class="hero-overlay-accent"></div>
     <!-- 文字内容 -->
     <div class="hero-content">
@@ -36,23 +23,7 @@
 </template>
 
 <script setup>
-/*
- * Hero 配置 — 素材就绪后只需改这里
- * ─────────────────────────────────────
- * bgImage:         照片路径，相对于 public/ 目录。留 '' 则回退为纯渐变
- *                  推荐 16:9 横向构图，如云冈石窟全景、悬空寺全貌等
- * overlayOpacity:  暗色遮罩透明度，0 = 看清照片，1 = 全黑遮住
- *                  建议范围 0.4~0.7，默认 0.5 平衡文字可读性与照片氛围
- */
-const heroConfig = {
-  bgImage: '',          // ← 填入 'images/hero-bg.jpg'（照片放 public/images/ 下）即可启用
-  overlayOpacity: 0.5, // ← 调节遮罩透明度
-}
-
-// 自动拼接 base 前缀（/temple-culture-evolution/），保证本地与线上路径一致
-const BASE = import.meta.env.BASE_URL
-const heroBgUrl = heroConfig.bgImage ? BASE + heroConfig.bgImage.replace(/^\//, '') : ''
-
+/* Hero 背景采用固定渐变设计（未使用照片素材） */
 const sites = ['华严寺', '善化寺', '云冈石窟', '悬空寺']
 
 const scrollTo = (id) => {
@@ -74,31 +45,12 @@ const scrollTo = (id) => {
   overflow: hidden;
 }
 
-/* ── 照片层 (z-index: 0) ── */
-.hero-bg-image {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-/* ── 暗色遮罩 (z-index: 1) ── */
-.hero-overlay-dark {
-  position: absolute;
-  inset: 0;
-  background: #0f0c29;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* ── 紫色光晕 (z-index: 2) ── */
+/* ── 紫色光晕 (z-index: 1) ── */
 .hero-overlay-accent {
   position: absolute;
   inset: 0;
   background: radial-gradient(ellipse at 50% 0%, rgba(var(--accent-rgb), 0.15), transparent 70%);
-  z-index: 2;
+  z-index: 1;
 }
 
 /* ── 文字内容 (z-index: 3) ── */

@@ -23,8 +23,7 @@ export const cavePeriods = [
       { number: '19', feature: '主尊坐佛，窟外两侧有耳洞' },
       { number: '20', feature: '露天大佛，云冈标志性形象，结跏趺坐' }
     ],
-    significance: '"神位"巅峰：帝王即佛，石窟是君王的神圣投影',
-    photos: []
+    significance: '"神位"巅峰：帝王即佛，石窟是君王的神圣投影'
   },
   {
     id: 'middle',
@@ -46,8 +45,7 @@ export const cavePeriods = [
       { number: '9-10', feature: '前廊后室，汉式建筑元素显著' },
       { number: '12', feature: '"音乐窟"，雕刻大量伎乐天' }
     ],
-    significance: '汉化转折：佛教艺术加速汉化，"人间化"趋势初现',
-    photos: []
+    significance: '汉化转折：佛教艺术加速汉化，"人间化"趋势初现'
   },
   {
     id: 'late',
@@ -66,8 +64,7 @@ export const cavePeriods = [
       { number: '15', feature: '"万佛洞"，壁面密布小型坐佛' },
       { number: '西部小窟群', feature: '民间自发开凿，大小不一，错落分布' }
     ],
-    significance: '"人位"崛起：民间力量主导，石窟从皇家功德变为个人信仰投资',
-    photos: []
+    significance: '"人位"崛起：民间力量主导，石窟从皇家功德变为个人信仰投资'
   }
 ]
 
